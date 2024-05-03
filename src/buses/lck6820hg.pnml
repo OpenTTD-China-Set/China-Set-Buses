@@ -1,0 +1,49 @@
+spriteset (spriteset_lck6820hg_ningbo, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP) {
+    template_8bpp ("single", "lck6820hg")
+}
+
+spriteset (spriteset_lck6820hg_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP) {
+    template_purchase_8bpp ("single", "lck6820hg")
+}
+
+item (FEAT_ROADVEHS, lck6820hg) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         8;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_LCK6820HG);
+        introduction_date:              date(2013,1,1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              15;
+
+        power:                          132 kW;
+        weight:                         7.5 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          70 km/h;
+
+        cargo_capacity:                 58;
+        loading_speed:                  9 << param_loading_speed;
+        cargo_age_period:               138 << param_cargo_decay;
+    }
+    graphics {
+        default:                        spriteset_lck6820hg_ningbo;
+        purchase:                       spriteset_lck6820hg_purchase;
+
+        cost_factor:                    67;
+        running_cost_factor:            143 * runningcostfactor();
+        purchase_running_cost_factor:   143 * 8;
+        
+        additional_text:                string(STR_DESC_3, string(STR_RELDEC_15), string(STR_COMFORT_138), string(STR_LOADING_9));
+    }
+}

@@ -1,0 +1,46 @@
+﻿##grflangid 0x01
+
+STR_GRF_NAME        :China Set: Buses {VERSION_STRING}
+STR_GRF_DESC        :The Bus sector of the China Set of OpenTTD.
+STR_GRF_URL         :https://www.tt-forums.net/viewtopic.php?t=91092
+STR_GRF_DESC_EXTRA  :Buses: Short-distance Buses, Long-distance Coaches, and Trolleybuses in China Mainland. More contents in the future.
+STR_GRF_DESC_README :See readme for details.
+
+STR_PARAM_LOADING_SPEED         :Loading Speed
+STR_PARAM_LOADING_SPEED_DESC    :Adjust vehicle loading speed. Default is 100%.
+
+STR_PARAM_PURCHASE_COST      :Purchase costs
+STR_PARAM_PURCHASE_COST_DESC :Adjust vehicle purchase costs. Default is 25%.
+STR_PARAM_RUNNING_COST       :Running costs
+STR_PARAM_RUNNING_COST_DESC  :Adjust vehicle running costs. Default is 25%.
+
+STR_PARAM_DIVIDE_16 :6.25%
+STR_PARAM_DIVIDE_8  :12.5%
+STR_PARAM_DIVIDE_4  :25%
+STR_PARAM_DIVIDE_2  :50%
+STR_PARAM_NORMAL    :100%
+STR_PARAM_TIMES_2   :200%
+STR_PARAM_TIMES_4   :400%
+STR_PARAM_TIMES_8   :800%
+STR_PARAM_TIMES_16  :1600%
+
+STR_PARAM_CARGO_DECAY       :Cargo Age Period
+STR_PARAM_CARGO_DECAY_DESC  :Adjust cargo age period of coaches and wagons. "Long" is "Standard" doubled, while "Very Long" is "Long" doubled. Even in "Standard" mode, cargo age period varies.
+STR_PARAM_STANDARD          :Standard
+STR_PARAM_LONG              :Long
+STR_PARAM_VERY_LONG         :Very Long
+
+STR_USED_WITH_DYNAMIC_ENGINES       :This GRF needs dynamic_engines to be turned on. Open console, and type "setting dynamic_engines 1".
+
+STR_DESC_2                  :{STRING}{}{STRING}
+STR_DESC_3                  :{STRING}{}{STRING}{}{STRING}
+STR_DESC_4                  :{STRING}{}{STRING}{}{STRING}{}{STRING}
+STR_DESC_5                  :{STRING}{}{STRING}{}{STRING}{}{STRING}{}{STRING}
+
+STR_NAME_LCK6820HG          :Zhongtong LCK6820HG (Diesel)
+
+STR_RELDEC_15               :Reliability Decay Speed: 15
+
+STR_COMFORT_138             :Comfort: 138
+
+STR_LOADING_9               :Loading Speed: 9

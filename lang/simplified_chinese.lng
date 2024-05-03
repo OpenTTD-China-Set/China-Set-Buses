@@ -1,0 +1,42 @@
+##grflangid 0x56
+
+STR_GRF_NAME        :中国包：巴士 {VERSION_STRING}
+STR_GRF_DESC        :OpenTTD中国包的巴士部分。
+STR_GRF_URL         :https://www.tt-forums.net/viewtopic.php?t=91092
+STR_GRF_DESC_EXTRA  :中国大陆的公共汽车，包括公交车、长途客车、无轨电车。未来会有更多内容。
+STR_GRF_DESC_README :更多信息请查看Readme。
+
+STR_PARAM_LOADING_SPEED         :装载速度
+STR_PARAM_LOADING_SPEED_DESC    :调整车辆装载速度. 默认为100%. 
+
+STR_PARAM_PURCHASE_COST      :购买费用
+STR_PARAM_PURCHASE_COST_DESC :调整车辆购买费用. 默认为25%.
+STR_PARAM_RUNNING_COST       :运营费用
+STR_PARAM_RUNNING_COST_DESC  :调整车辆运营费用. 默认为25%.
+
+STR_PARAM_DIVIDE_16 :6.25%
+STR_PARAM_DIVIDE_8  :12.5%
+STR_PARAM_DIVIDE_4  :25%
+STR_PARAM_DIVIDE_2  :50%
+STR_PARAM_NORMAL    :100%
+STR_PARAM_TIMES_2   :200%
+STR_PARAM_TIMES_4   :400%
+STR_PARAM_TIMES_8   :800%
+STR_PARAM_TIMES_16  :1600%
+
+STR_PARAM_CARGO_DECAY       :货物贬值周期
+STR_PARAM_CARGO_DECAY_DESC  :调整车辆的货物贬值周期. “较长”为“标准”的两倍, “很长”是“较长”的两倍. 即使在“标准”设置下, 货物贬值周期也随车辆种类而变化.
+STR_PARAM_STANDARD          :标准
+STR_PARAM_LONG              :较长
+STR_PARAM_VERY_LONG         :很长
+
+STR_USED_WITH_DYNAMIC_ENGINES       :请切换至控制台模式, 键入 "set dynamic_engines 1", 否则您无法游玩中国包.
+
+
+STR_NAME_LCK6820HG          :中通 LCK6820HG (柴油)
+
+STR_RELDEC_15               :可靠性下降速度: 15
+
+STR_COMFORT_138             :舒适度: 138
+
+STR_LOADING_9               :装载速度: 9

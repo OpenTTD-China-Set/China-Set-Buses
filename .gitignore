@@ -1,0 +1,7 @@
+.nmlcache
+.vscode
+*.grf
+*.nml
+*.tar
+chinasetbuses-*
+custom_tags.txt

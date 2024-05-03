@@ -1,0 +1,19 @@
+// Define the GRF
+#include "src/header.pnml"
+
+// Templates
+#include "src/template.pnml"
+
+// Helpers
+#include "src/cargotable.pnml"
+#include "src/functions.pnml"
+
+// IDs
+#include "src/vehicleid.pnml"
+
+// Buses
+#include "src/buses/lck6820hg.pnml"
+
+
+// Sort Vehicles
+#include "src/vehiclesort.pnml"

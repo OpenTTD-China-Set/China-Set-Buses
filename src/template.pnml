@@ -1,0 +1,28 @@
+// Begin template
+
+// Learned from JP+ Shinkansen
+
+// Empty Template
+
+template template_purchase_8bpp (a, b) {
+    // a: vehicle type (all lower cases), b: vehicle name (all lower cases)
+    []
+    []
+    []
+    []
+    []
+    []
+    [504,   0, 128,  64, -64, -48, "gfx/"+a+"/"+b+"_8bpp.png"]
+    []
+}
+
+template template_8bpp (a, b) {
+    [  0,   0,  32,  96, -12, -48, "gfx/"+a+"/"+b+"_8bpp.png"]
+    [ 40,   0,  88,  80, -56, -48, "gfx/"+a+"/"+b+"_8bpp.png"]
+    [136,   0, 128,  64, -64, -48, "gfx/"+a+"/"+b+"_8bpp.png"]
+    [272,   0,  88,  80, -24, -48, "gfx/"+a+"/"+b+"_8bpp.png"]
+    [368,   0,  32,  96, -12, -48, "gfx/"+a+"/"+b+"_8bpp.png"]
+    [408,   0,  88,  80, -56, -48, "gfx/"+a+"/"+b+"_8bpp.png"]
+    [504,   0, 128,  64, -64, -48, "gfx/"+a+"/"+b+"_8bpp.png"]
+    [640,   0,  88,  80, -24, -48, "gfx/"+a+"/"+b+"_8bpp.png"]
+}
