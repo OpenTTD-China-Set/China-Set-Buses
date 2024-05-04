@@ -43,7 +43,7 @@ item (FEAT_ROADVEHS, lck6820hg) {
         cost_factor:                    67;
         running_cost_factor:            143 * runningcostfactor();
         purchase_running_cost_factor:   143 * 8;
-        
-        additional_text:                string(STR_DESC_3, string(STR_RELDEC_15), string(STR_COMFORT_138), string(STR_LOADING_9));
+
+        additional_text:                string(STR_DESC_3, string(STR_RELDEC, 15), string(STR_COMFORT, 138), string(STR_LOADING, 9));
     }
 }

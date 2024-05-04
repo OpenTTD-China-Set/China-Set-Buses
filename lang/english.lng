@@ -14,15 +14,7 @@ STR_PARAM_PURCHASE_COST_DESC :Adjust vehicle purchase costs. Default is 25%.
 STR_PARAM_RUNNING_COST       :Running costs
 STR_PARAM_RUNNING_COST_DESC  :Adjust vehicle running costs. Default is 25%.
 
-STR_PARAM_DIVIDE_16 :6.25%
-STR_PARAM_DIVIDE_8  :12.5%
-STR_PARAM_DIVIDE_4  :25%
-STR_PARAM_DIVIDE_2  :50%
-STR_PARAM_NORMAL    :100%
-STR_PARAM_TIMES_2   :200%
-STR_PARAM_TIMES_4   :400%
-STR_PARAM_TIMES_8   :800%
-STR_PARAM_TIMES_16  :1600%
+STR_PARAM_NUM       :{COMMA}%
 
 STR_PARAM_CARGO_DECAY       :Cargo Age Period
 STR_PARAM_CARGO_DECAY_DESC  :Adjust cargo age period of coaches and wagons. "Long" is "Standard" doubled, while "Very Long" is "Long" doubled. Even in "Standard" mode, cargo age period varies.
@@ -39,8 +31,6 @@ STR_DESC_5                  :{STRING}{}{STRING}{}{STRING}{}{STRING}{}{STRING}
 
 STR_NAME_LCK6820HG          :Zhongtong LCK6820HG (Diesel)
 
-STR_RELDEC_15               :Reliability Decay Speed: 15
-
-STR_COMFORT_138             :Comfort: 138
-
-STR_LOADING_9               :Loading Speed: 9
+STR_RELDEC                  :Reliability Decay Speed: {COMMA}
+STR_COMFORT                 :Comfort: {COMMA}
+STR_LOADING                 :Loading Speed: {COMMA}
