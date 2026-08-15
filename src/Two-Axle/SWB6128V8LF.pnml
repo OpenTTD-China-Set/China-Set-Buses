@@ -9,16 +9,16 @@ spriteset (spriteset_SWB6128V8LF_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
 }
 
 spriteset (spriteset_SWB6128V8LF_green, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "SWB6128V8LF_PUXI")
+    template_standard_0 ("Two-Axle", "SWB6128V8LF_PUXI")
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_SWB6128V8LF_graphics, position_in_articulated_veh) {
-    1: spriteset_SWB6128V8LF_green;
+    0: spriteset_SWB6128V8LF_green;
     empty_sprites;
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_SWB6128V8LF_articulated_part, extra_callback_info1) {
-    1..2 : return SWB6128V8LF;
+    1 : return SWB6128V8LF;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
@@ -50,20 +50,20 @@ item (FEAT_ROADVEHS, SWB6128V8LF) {
         tractive_effort_coefficient:    0.3;
         speed:                          70 km/h;
 
-        cargo_capacity:                 30;
+        cargo_capacity:                 45;
         loading_speed:                  40 << param_loading_speed;
-        cargo_age_period:               168 << param_cargo_decay;
+        cargo_age_period:               158 << param_cargo_decay;
     }
     graphics {
         default:                        switch_SWB6128V8LF_graphics;
         purchase:                       spriteset_SWB6128V8LF_purchase;
-        length:                         switch_2_7_2_length_11;
+        length:                         switch_8_3_length_11;
         articulated_part:               switch_SWB6128V8LF_articulated_part;
-        additional_text:                string(STR_DESC_4, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 168 ,string(STR_CLASS_HIGH_2)), string(STR_LOADING_SPEED, 40));
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 158 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 40), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
 
-        cost_factor:                    193;
-        running_cost_factor:            2 * runningcostfactor();
-        purchase_running_cost_factor:   2 * 8;
+        cost_factor:                    243;
+        running_cost_factor:            16 * runningcostfactor();
+        purchase_running_cost_factor:   16 * 8;
         name:                           switch_sunwin_8_name;
     }
 }

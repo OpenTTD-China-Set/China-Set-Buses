@@ -1,0 +1,83 @@
+// Begin Leyland_Olympian_12M_intercity
+
+switch (FEAT_ROADVEHS, SELF, switch_Leyland_Olympian_12M_intercity_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_LEYLAND_OLYMPIAN);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_Leyland_Olympian_12M_intercity_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Double-Decker", "LEYLAND_OLYMPIAN_12M_CTB_1D")
+}
+
+spriteset (spriteset_Leyland_Olympian_12M_intercity_CTB, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Double-Decker", "LEYLAND_OLYMPIAN_12M_CTB_1D")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_Leyland_Olympian_12M_intercity_cargo_subtype, cargo_subtype) {
+    0: return string(STR_CTB);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_Leyland_Olympian_12M_intercity_cargo_graphics, cargo_subtype) {
+    0: spriteset_Leyland_Olympian_12M_intercity_CTB;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_Leyland_Olympian_12M_intercity_graphics, position_in_articulated_veh) {
+    0: switch_Leyland_Olympian_12M_intercity_cargo_graphics;
+    empty_sprites;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_Leyland_Olympian_12M_intercity_articulated_part, extra_callback_info1) {
+    1 : return Leyland_Olympian_12M_intercity;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, Leyland_Olympian_12M_intercity) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:                  Leyland_Olympian_96M_without_AC;
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         7;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_LEYLAND_OLYMPIAN_12M_INTERCITY);
+        introduction_date:              date(1992,1,1);
+        model_life:                     60;
+        retire_early:                   50;
+        vehicle_life:                   20;
+        reliability_decay:              12;
+
+        power:                          260 hp;
+        weight:                         14.4 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          70 km/h;
+
+        cargo_capacity:                 40;
+        loading_speed:                  20 << param_loading_speed;
+        cargo_age_period:               184 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_Leyland_Olympian_12M_intercity_graphics;
+        purchase:                       spriteset_Leyland_Olympian_12M_intercity_purchase;
+        length:                         switch_8_3_length_11;
+        cargo_subtype_text:             switch_Leyland_Olympian_12M_intercity_cargo_subtype;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_INTERCITY_BUS), string(STR_SIZE_LARGE), string(STR_COMFORT_WITHOUT_CLASS, 184), string(STR_LOADING_SPEED, 20), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+        articulated_part:               switch_Leyland_Olympian_12M_intercity_articulated_part;
+
+        cost_factor:                    226;
+        running_cost_factor:            18 * runningcostfactor();
+        purchase_running_cost_factor:   18 * 8;
+        name:                           switch_Leyland_Olympian_12M_intercity_name;
+    }
+}
+
+// End Leyland_Olympian_12M_intercity

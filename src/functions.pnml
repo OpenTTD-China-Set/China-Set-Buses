@@ -16,14 +16,29 @@ switch (FEAT_ROADVEHS, SELF, switch_8_2_length_10, position_in_articulated_veh) 
     return 2;
 }
 
-switch (FEAT_ROADVEHS, SELF, switch_2_7_2_length_11, position_in_articulated_veh) {
-    1: return 7;
+switch (FEAT_ROADVEHS, SELF, switch_8_3_length_11, position_in_articulated_veh) {
+    0: return 8;
     return 2;
 }
 
-switch (FEAT_ROADVEHS, SELF, switch_2_8_2_length_12, position_in_articulated_veh) {
-    1: return 8;
+switch (FEAT_ROADVEHS, SELF, switch_8_4_length_12, position_in_articulated_veh) {
+    0: return 8;
     return 2;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_8_5_length_13, position_in_articulated_veh) {
+    1: return 5;
+    return 8;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_8_6_length_14, position_in_articulated_veh) {
+    1: return 6;
+    return 8;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_8_7_length_15, position_in_articulated_veh) {
+    1: return 7;
+    return 8;
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_8_8_length_16, position_in_articulated_veh) {

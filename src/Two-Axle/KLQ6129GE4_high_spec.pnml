@@ -5,15 +5,15 @@ spriteset (spriteset_KLQ6129GE4_high_spec_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_
 }
 
 spriteset (spriteset_KLQ6129GE4_high_spec_1L, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "KLQ6129GE4_1L")
+    template_standard_0 ("Two-Axle", "KLQ6129GE4_1L")
 }
 
 spriteset (spriteset_KLQ6129GE4_high_spec_2L, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "KLQ6129GE4_2L")
+    template_standard_0 ("Two-Axle", "KLQ6129GE4_2L")
 }
 
 spriteset (spriteset_KLQ6129GE4_high_spec_2L_TJ, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "KLQ6129GE4_2L_TJ")
+    template_standard_0 ("Two-Axle", "KLQ6129GE4_2L_TJ")
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_KLQ6129GE4_high_spec_cargo_subtype, cargo_subtype) {
@@ -30,12 +30,12 @@ switch (FEAT_ROADVEHS, SELF, switch_KLQ6129GE4_high_spec_cargo_graphics, cargo_s
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_KLQ6129GE4_high_spec_graphics, position_in_articulated_veh) {
-    1: switch_KLQ6129GE4_high_spec_cargo_graphics;
+    0: switch_KLQ6129GE4_high_spec_cargo_graphics;
     empty_sprites;
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_KLQ6129GE4_high_spec_articulated_part, extra_callback_info1) {
-    1..2 : return KLQ6129GE4_high_spec;
+    1 : return KLQ6129GE4_high_spec;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
@@ -61,27 +61,27 @@ item (FEAT_ROADVEHS, KLQ6129GE4_high_spec) {
         model_life:                     60;
         retire_early:                   50;
         vehicle_life:                   13;
-        reliability_decay:              12;
+        reliability_decay:              8;
 
         power:                          206 kW;
         weight:                         11.8 ton;
         tractive_effort_coefficient:    0.3;
         speed:                          85 km/h;
 
-        cargo_capacity:                 34;
+        cargo_capacity:                 51;
         loading_speed:                  40 << param_loading_speed;
-        cargo_age_period:               157 << param_cargo_decay;
+        cargo_age_period:               134 << param_cargo_decay;
     }
     graphics {
         default:                        switch_KLQ6129GE4_high_spec_graphics;
         purchase:                       spriteset_KLQ6129GE4_high_spec_purchase;
         cargo_subtype_text:             switch_KLQ6129GE4_high_spec_cargo_subtype;
-        length:                         switch_2_7_2_length_11;
+        length:                         switch_8_3_length_11;
         articulated_part:               switch_KLQ6129GE4_high_spec_articulated_part;
-        additional_text:                string(STR_DESC_4, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 157 ,string(STR_CLASS_HIGH_2)), string(STR_LOADING_SPEED, 40));
-        cost_factor:                    195;
-        running_cost_factor:            2 * runningcostfactor();
-        purchase_running_cost_factor:   2 * 8;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 134 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 40), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+        cost_factor:                    245;
+        running_cost_factor:            18 * runningcostfactor();
+        purchase_running_cost_factor:   18 * 8;
         name:                           switch_KLQ6129GE4_standard_name;
     }
 }

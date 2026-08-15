@@ -1,0 +1,82 @@
+// Begin SWB6120KHV_3
+switch (FEAT_ROADVEHS, SELF, switch_shenhao_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_SHENHAO);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_SWB6120KHV_3_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Two-Axle", "SWB6120KHV_3_SH_GREEN")
+}
+
+spriteset (spriteset_SWB6120KHV_3_green, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "SWB6120KHV_3_SH_GREEN")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_SWB6120KHV_3_cargo_subtype, cargo_subtype) {
+    0: return string(STR_SH_GREEN);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_SWB6120KHV_3_cargo_graphics, cargo_subtype) {
+    0: spriteset_SWB6120KHV_3_green;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_SWB6120KHV_3_graphics, position_in_articulated_veh) {
+    0: switch_SWB6120KHV_3_cargo_graphics;
+    empty_sprites;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_SWB6120KHV_3_articulated_part, extra_callback_info1) {
+    1 : return SWB6120KHV_3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, SWB6120KHV_3) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:					SWB6120KHV_3;
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         7;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_SWB6120KHV_3);
+        introduction_date:              date(2001,1,1);
+        model_life:                     60;
+        retire_early:                   50;
+        vehicle_life:                   13;
+        reliability_decay:              12;
+
+        power:                          169 kW;
+        weight:                         11.0 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          78 km/h;
+
+        cargo_capacity:                 44;
+        loading_speed:                  40 << param_loading_speed;
+        cargo_age_period:               154 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_SWB6120KHV_3_graphics;
+        purchase:                       spriteset_SWB6120KHV_3_purchase;
+        cargo_subtype_text:             switch_SWB6120KHV_3_cargo_subtype;
+        length:                         switch_8_3_length_11;
+        articulated_part:               switch_SWB6120KHV_3_articulated_part;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 154 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 40), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+
+        cost_factor:                    219;
+        running_cost_factor:            16 * runningcostfactor();
+        purchase_running_cost_factor:   16 * 8;
+        name:                           switch_shenhao_name;
+    }
+}
+
+// End SWB6120KHV_3

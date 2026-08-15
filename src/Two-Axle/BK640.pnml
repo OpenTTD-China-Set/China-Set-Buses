@@ -27,7 +27,7 @@ item (FEAT_ROADVEHS, BK640) {
         name:                           string(STR_NAME_BK640);
         introduction_date:              date(1957,12,1);
         model_life:                     60;
-        retire_early:                   43;
+        retire_early:                   40;
         vehicle_life:                   20;
         reliability_decay:              16;
 
@@ -43,11 +43,11 @@ item (FEAT_ROADVEHS, BK640) {
     graphics {
         default:                        spriteset_BK640_original;
         purchase:                       spriteset_BK640_purchase;
-        additional_text:                string(STR_DESC_4, string(STR_TYPE_URBAN), string(STR_SIZE_MEDIUM), string(STR_COMFORT, 102 ,string(STR_CLASS_ORIDINARY)), string(STR_LOADING_SPEED, 20));
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_MEDIUM), string(STR_COMFORT, 102 ,string(STR_CLASS_ORDINARY)), string(STR_LOADING_SPEED, 20), string(STR_POWERTRAIN_TYPE, string(STR_PETROL)));
 
-        cost_factor:                    59;
-        running_cost_factor:            1 * runningcostfactor();
-        purchase_running_cost_factor:   1 * 8;
+        cost_factor:                    63;
+        running_cost_factor:            11 * runningcostfactor();
+        purchase_running_cost_factor:   11 * 8;
     }
 }
 

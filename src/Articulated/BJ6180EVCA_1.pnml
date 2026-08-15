@@ -1,0 +1,78 @@
+// Begin BJ6180EVCA_1
+
+spriteset (spriteset_BJ6180EVCA_1_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_xl ("Articulated", "Menu/BJ6180EVCA_1_BJ")
+}
+
+spriteset (spriteset_BJ6180EVCA_1_BJ_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Articulated", "BJ6180EVCA_1_BJ_1")
+}
+
+spriteset (spriteset_BJ6180EVCA_1_BJ_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard__1 ("Articulated", "BJ6180EVCA_1_BJ_2")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BJ6180EVCA_1_cargo_subtype, cargo_subtype) {
+    0: return string(STR_BJ_BEIDIANLAN);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BJ6180EVCA_1_BJ_cargo_graphics, position_in_articulated_veh) {
+    0: spriteset_BJ6180EVCA_1_BJ_1;
+    1: spriteset_BJ6180EVCA_1_BJ_2;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BJ6180EVCA_1_graphics, cargo_subtype) {
+    0: switch_BJ6180EVCA_1_BJ_cargo_graphics;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BJ6180EVCA_1_articulated_part, extra_callback_info1) {
+    1: return BJ6180EVCA_1;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, BJ6180EVCA_1) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_BJ6180EVCA_1);
+        introduction_date:              date(2015,10,14);
+        model_life:                     60;
+        retire_early:                   50;       
+        vehicle_life:                   13;
+        reliability_decay:              8;
+
+        power:                          145 kW;
+        weight:                         18.5 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          70 km/h;
+
+        cargo_capacity:                 72;
+        loading_speed:                  60 << param_loading_speed;
+        cargo_age_period:               158 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_BJ6180EVCA_1_graphics;
+        purchase:                       spriteset_BJ6180EVCA_1_purchase;
+        cargo_subtype_text:             switch_BJ6180EVCA_1_cargo_subtype;
+        articulated_part:               switch_BJ6180EVCA_1_articulated_part;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_EXTRA_LARGE), string(STR_COMFORT, 158 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 60), string(STR_POWERTRAIN_TYPE, string(STR_ELECTRIC)));
+
+        cost_factor:                    460;
+        running_cost_factor:            6 * runningcostfactor();
+        purchase_running_cost_factor:   6 * 8;
+        length:                         switch_8_8_length_16;
+    }
+}
+
+// End BJ6180EVCA_1

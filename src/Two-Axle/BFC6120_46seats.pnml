@@ -1,0 +1,72 @@
+// Begin BFC6120_46SEATS
+switch (FEAT_ROADVEHS, SELF, switch_BFC6120_46seats_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_BFC6120);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_BFC6120_46seats_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Two-Axle", "BFC6120_ORIGINAL")
+}
+
+spriteset (spriteset_BFC6120_46seats_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "BFC6120_ORIGINAL")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BFC6120_46seats_graphics, position_in_articulated_veh) {
+    0: spriteset_BFC6120_46seats_original;
+    empty_sprites;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BFC6120_46seats_articulated_part, extra_callback_info1) {
+    1 : return BFC6120_46seats;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, BFC6120_46seats) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:					BFC6120_46seats;
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         7;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_BFC6120_46SEATS);
+        introduction_date:              date(1987,1,1);
+        model_life:                     60;
+        retire_early:                   45;
+        vehicle_life:                   15;
+        reliability_decay:              8;
+
+        power:                          188 kW;
+        weight:                         12.2 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          110 km/h;
+
+        cargo_capacity:                 23;
+        loading_speed:                  20 << param_loading_speed;
+        cargo_age_period:               321 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_BFC6120_46seats_graphics;
+        purchase:                       spriteset_BFC6120_46seats_purchase;
+        length:                         switch_8_3_length_11;
+        articulated_part:               switch_BFC6120_46seats_articulated_part;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_LONG_DISTANCE), string(STR_SIZE_LARGE), string(STR_COMFORT, 321 ,string(STR_CLASS_HIGH_2)), string(STR_LOADING_SPEED, 20), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+
+        cost_factor:                    211;
+        running_cost_factor:            23 * runningcostfactor();
+        purchase_running_cost_factor:   23 * 8;
+        name:                           switch_BFC6120_46seats_name;
+    }
+}
+
+// End BFC6120_46SEATS

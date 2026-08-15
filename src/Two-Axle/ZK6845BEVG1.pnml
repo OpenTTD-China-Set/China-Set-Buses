@@ -1,5 +1,10 @@
 // Begin ZK6845BEVG1
 
+switch (FEAT_ROADVEHS, SELF, switch_ZK6845BEVG1_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_YUTONG_E8);
+    return CB_RESULT_NO_TEXT;
+}
+
 spriteset (spriteset_ZK6845BEVG1_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
     template_purchase_32bpp ("Two-Axle", "ZK6845BEVG1")
 }
@@ -30,6 +35,8 @@ item (FEAT_ROADVEHS, ZK6845BEVG1) {
         running_cost_base:              RUNNING_COST_ROADVEH;
         refit_cost:                     0;
         misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:					ZK6845BEVG1;
+
         cost_factor:                    1;
         running_cost_factor:            1;
 
@@ -39,7 +46,7 @@ item (FEAT_ROADVEHS, ZK6845BEVG1) {
         default_cargo_type:             PASS;
 
         name:                           string(STR_NAME_ZK6845BEVG1);
-        introduction_date:              date(2013,02,18);
+        introduction_date:              date(2015,10,14);
         model_life:                     60;
         retire_early:                   50;
         vehicle_life:                   13;
@@ -50,19 +57,20 @@ item (FEAT_ROADVEHS, ZK6845BEVG1) {
         tractive_effort_coefficient:    0.3;
         speed:                          70 km/h;
 
-        cargo_capacity:                 72;
+        cargo_capacity:                 61;
         loading_speed:                  30 << param_loading_speed;
-        cargo_age_period:               146 << param_cargo_decay;
+        cargo_age_period:               136 << param_cargo_decay;
     }
     graphics {
         default:                        switch_ZK6845BEVG1_graphics;
         purchase:                       spriteset_ZK6845BEVG1_purchase;
         cargo_subtype_text:             switch_ZK6845BEVG1_cargo_subtype;
-        additional_text:                string(STR_DESC_4, string(STR_TYPE_URBAN), string(STR_SIZE_MEDIUM), string(STR_COMFORT, 146 ,string(STR_CLASS_HIGH_2)), string(STR_LOADING_SPEED, 30));
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_MEDIUM), string(STR_COMFORT, 136 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 30), string(STR_POWERTRAIN_TYPE, string(STR_ELECTRIC)));
 
-        cost_factor:                    147;
-        running_cost_factor:            1 * runningcostfactor();
-        purchase_running_cost_factor:   1 * 8;
+        cost_factor:                    294;
+        running_cost_factor:            5 * runningcostfactor();
+        purchase_running_cost_factor:   5 * 8;
+        name:                           switch_ZK6845BEVG1_name;
     }
 }
 

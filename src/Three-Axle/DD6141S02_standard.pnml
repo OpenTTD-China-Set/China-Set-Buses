@@ -1,0 +1,100 @@
+// Begin DD6141S02_STANDARD
+switch (FEAT_ROADVEHS, SELF, switch_DD6141S02_standard_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_DD6141S02);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_DD6141S02_standard_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Three-Axle", "DD6141S02_WHITE")
+}
+
+spriteset (spriteset_DD6141S02_standard_white, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Three-Axle", "DD6141S02_WHITE")
+}
+
+spriteset (spriteset_DD6141S02_standard_BJ, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Three-Axle", "DD6141S02_BJ")
+}
+
+spriteset (spriteset_DD6141S02_standard_BJ_QN, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Three-Axle", "DD6141S02_BJ_QN")
+}
+
+spriteset (spriteset_DD6141S02_standard_CHENGDE, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Three-Axle", "DD6141S02_CHENGDE")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_DD6141S02_standard_cargo_subtype, cargo_subtype) {
+    0: return string(STR_WHITE);
+    1: return string(STR_BJ_2);
+    2: return string(STR_BJ_2_QN);
+    3: return string(STR_CHENGDE);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_DD6141S02_standard_cargo_graphics, cargo_subtype) {
+    0: spriteset_DD6141S02_standard_white;
+    1: spriteset_DD6141S02_standard_BJ;
+    2: spriteset_DD6141S02_standard_BJ_QN;
+    3: spriteset_DD6141S02_standard_CHENGDE;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_DD6141S02_standard_graphics, position_in_articulated_veh) {
+    0: switch_DD6141S02_standard_cargo_graphics;
+    empty_sprites;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_DD6141S02_standard_articulated_part, extra_callback_info1) {
+    1 : return DD6141S02_standard;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, DD6141S02_standard) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:                  DD6141S02_standard;
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         7;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_DD6141S02_STANDARD);
+        introduction_date:              date(2007,7,21);
+        model_life:                     60;
+        retire_early:                   50;
+        vehicle_life:                   13;
+        reliability_decay:              8;
+
+        power:                          177 kW;
+        weight:                         14.55 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          80 km/h;
+
+        cargo_capacity:                 68;
+        loading_speed:                  60 << param_loading_speed;
+        cargo_age_period:               123 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_DD6141S02_standard_graphics;
+        purchase:                       spriteset_DD6141S02_standard_purchase;
+        cargo_subtype_text:             switch_DD6141S02_standard_cargo_subtype;
+        length:                         switch_8_4_length_12;
+        articulated_part:               switch_DD6141S02_standard_articulated_part;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_EXTRA_LARGE), string(STR_COMFORT, 123 ,string(STR_CLASS_ORDINARY)), string(STR_LOADING_SPEED, 60), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+
+        cost_factor:                    234;
+        running_cost_factor:            19 * runningcostfactor();
+        purchase_running_cost_factor:   19 * 8;
+        name:                           switch_DD6141S02_standard_name;
+    }
+}
+
+// End DD6141S02_STANDARD

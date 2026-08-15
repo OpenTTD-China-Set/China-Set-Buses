@@ -1,0 +1,88 @@
+// Begin ZK6106BEVG4
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6106BEVG4_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_YUTONG_E10);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_ZK6106BEVG4_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Two-Axle", "ZK6106BEVG4_WHITE")
+}
+
+spriteset (spriteset_ZK6106BEVG4_white, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6106BEVG4_WHITE")
+}
+
+spriteset (spriteset_ZK6106BEVG4_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6106BEVG4_ORIGINAL")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6106BEVG4_cargo_subtype, cargo_subtype) {
+    0: return string(STR_WHITE);
+    1: return string(STR_ORIGINAL);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6106BEVG4_cargo_graphics, cargo_subtype) {
+    0: spriteset_ZK6106BEVG4_white;
+    1: spriteset_ZK6106BEVG4_original;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6106BEVG4_graphics, position_in_articulated_veh) {
+    0: switch_ZK6106BEVG4_cargo_graphics;
+    empty_sprites;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6106BEVG4_articulated_part, extra_callback_info1) {
+    1 : return ZK6106BEVG4;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, ZK6106BEVG4) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:					ZK6106BEVG4;
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         8;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_ZK6106BEVG4);
+        introduction_date:              date(2019,11,12);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   13;
+        reliability_decay:              8;
+
+        power:                          240 kW;
+        weight:                         11.1 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          70 km/h;
+
+        cargo_capacity:                 45;
+        loading_speed:                  40 << param_loading_speed;
+        cargo_age_period:               160 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_ZK6106BEVG4_graphics;
+        purchase:                       spriteset_ZK6106BEVG4_purchase;
+        cargo_subtype_text:             switch_ZK6106BEVG4_cargo_subtype;
+        length:                         switch_8_2_length_10;
+        articulated_part:               switch_ZK6106BEVG4_articulated_part;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 160 ,string(STR_CLASS_HIGH_2)), string(STR_LOADING_SPEED, 40), string(STR_POWERTRAIN_TYPE, string(STR_ELECTRIC)));
+
+        cost_factor:                    422;
+        running_cost_factor:            5 * runningcostfactor();
+        purchase_running_cost_factor:   5 * 8;
+        name:                           switch_ZK6106BEVG4_name;
+    }
+}
+
+// End ZK6106BEVG4

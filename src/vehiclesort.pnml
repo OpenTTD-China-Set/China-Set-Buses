@@ -1,4 +1,119 @@
+// 用途（城市客车，城郊客车，城际客车（公交），城际客车（班线），长途客车，旅游客车），长度，首字母，荷载
+
 sort (FEAT_ROADVEHS, [
-    JNP6127EA
+    //城市客车
+    LCK6820HG,
+    ZK6845BEVG1,
+    BK640, //8.5m
+    ZK6856BEVG4,
+    ZK6856BEVG4_more_seats,
+    ZK6856BEVG22L,
+    ZK6856BEVG22L_more_seats,
+    TJ645B, //8.55m
+    Leyland_Olympian_96M_without_AC,
+    BK651, //10.5m
+    BJ6105CHEVCG_1,
+    BYD6100LGEV9,
+    GTQ6105BEVBT20,
+    JS6108GHEV17,
+    JS6108GHEV21,
+    JS6108GHEVC,
+    JS6108GHEVC5,
+    JS6108GHEVC6,
+    JS6108GHEVC16,
+    ZK6100HGA,
+    ZK6106BEVG4,
+    ZK6106BEVG4_more_seats,
+    ZK6106CHEVPG1,
+    ZK6106CHEVPG2,
+    Leyland_Olympian_103M_without_AC,
+    Leyland_Olympian_104M_with_AC,
+    Volvo_Olympian_104M_with_AC,
+    Volvo_Super_Olympian_106M,
+    HFF6110GS1,
+    Leyland_Olympian_11M_without_AC,
+    Leyland_Olympian_11M_with_AC,
+    Volvo_Olympian_113M_with_AC,
+    BJ6123SHEVCA_7,
+    GTQ6121BEVBT3,
+    KLQ6129GE4_high_spec,
+    KLQ6129GE4_standard,
+    Leyland_Olympian_12M_2D_with_AC,
+    Leyland_Olympian_12M_3D_without_AC,
+    SWB6120KHV_3,
+    SWB6120V4LE,
+    SWB6128V8LF,
+    SWB6128V8LF_3D,
+    Volvo_Olympian_12M_with_AC_1D,
+    Volvo_Olympian_12M_with_AC_2D,
+    Volvo_Super_Olympian_12M,
+    ZK6125CHEVNPG29_high_spec,
+    ZK6125CHEVNPG29_standard,
+    ZK6126BEVG3,
+    ZK6126BEVG3_more_seats,
+    DD6141B01,
+    DD6141B02N,
+    DD6141S01,
+    DD6141S02_standard,
+    DD6141S02_high_spec,
+    BK663, //14m
+    DD6140S01,
+    BJ6160C6CCD,
+    BJ6160SHEVCA_3,
+    DD6160S03,
+    BK670, //16.82m
+    BJ6180C8CTD,
+    BJ6180EVCA_1,
+    DD6181S01,
+    JNP6181GVC,
+
+    //城郊客车
+
+
+    //城际客车（公交）
+    Leyland_Olympian_12M_intercity,
+
+    //城际客车（班线）
+    ZK6820BEVG33,
+    ZK6820BEVG33_2D,
+    ZK6907H6Y_39seats_standard,
+    KLQ6109QE4_46seats,
+    XML6102J15Y_48seats,
+    KLQ6112LDE41,
+    KLQ6116ZGBEVN1,
+    ZK6117BEVY33,
+    JNP6127FEA_60seats,
+    KLQ6129KAE51,
+
+    //长途客车
+    JT663, //9.64m
+    ZK6907H6Y_26seats,
+    ZK6907H6Y_39seats_high_spec,
+    KLQ6109QE4_38seats,
+    XML6102J15Y_36seats,
+    YBL6105HJ,
+    KLQ6112HQE31,
+    KLQ6115HTAE50,
+    RC421P, //11.2m
+    ZK6117H6Y1_30seats,
+    ZK6117H6Y1_36seats,
+    ZK6117H6Y1_48seats,
+    BFC6120_46seats,
+    BFC6120_54seats,
+    HFF6120GD,
+    JNP6127EA,
+    JNP6127FEA_38seats,
+    JNP6127FEA_54seats,
+    KLQ6122BAE31,
+    KLQ6122BAE61,
+    KLQ6122KAE31,
+    ZK6128H6QY1_38seats,
+    ZK6128H6QY1_50seats,
+    ZK6137H16QY1_38seats,
+    ZK6137H16QY1_54seats,
+
+    //旅游客车
+    ZK6907H6Y1,
+    ZK6128H6QY6,
+    
 ]);
-//还没想好购买菜单怎么排序

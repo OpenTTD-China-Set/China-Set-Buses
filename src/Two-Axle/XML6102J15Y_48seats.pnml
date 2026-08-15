@@ -47,19 +47,19 @@ item (FEAT_ROADVEHS, XML6102J15Y_48seats) {
         tractive_effort_coefficient:    0.3;
         speed:                          100 km/h;
 
-        cargo_capacity:                 16 ;
+        cargo_capacity:                 24 ;
         loading_speed:                  20 << param_loading_speed;
-        cargo_age_period:               170 << param_cargo_decay;
+        cargo_age_period:               226 << param_cargo_decay;
     }
     graphics {
         default:                        switch_XML6102J15Y_48seats_graphics;
         purchase:                       spriteset_XML6102J15Y_48seats_purchase;
         length:                         switch_8_2_length_10;
         articulated_part:               switch_XML6102J15Y_48seats_articulated_part;
-        additional_text:                string(STR_DESC_4, string(STR_TYPE_LONG_DISTANCE), string(STR_SIZE_LARGE), string(STR_COMFORT, 170 ,string(STR_CLASS_MEDIUM)), string(STR_LOADING_SPEED, 20));
-        cost_factor:                    202;
-        running_cost_factor:            2 * runningcostfactor();
-        purchase_running_cost_factor:   2 * 8;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_INTERCITY_COACH), string(STR_SIZE_LARGE), string(STR_COMFORT, 226 ,string(STR_CLASS_MEDIUM)), string(STR_LOADING_SPEED, 20), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+        cost_factor:                    228;
+        running_cost_factor:            20 * runningcostfactor();
+        purchase_running_cost_factor:   20 * 8;
         name:                           switch_XML6102J15Y_36seats_name;
     }
 }

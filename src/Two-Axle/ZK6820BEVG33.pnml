@@ -1,0 +1,76 @@
+// Begin ZK6820BEVG33
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6820BEVG33_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_YUTONG_7);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_ZK6820BEVG33_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Two-Axle", "ZK6820BEVG33_WHITE")
+}
+
+spriteset (spriteset_ZK6820BEVG33_white, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6820BEVG33_WHITE")
+}
+
+spriteset (spriteset_ZK6820BEVG33_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6820BEVG33_ORIGINAL")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6820BEVG33_cargo_subtype, cargo_subtype) {
+    0: return string(STR_WHITE);
+    1: return string(STR_ORIGINAL);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6820BEVG33_graphics, cargo_subtype) {
+    0: spriteset_ZK6820BEVG33_white;
+    1: spriteset_ZK6820BEVG33_original;
+}
+
+item (FEAT_ROADVEHS, ZK6820BEVG33) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:					ZK6820BEVG33;
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         7;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_ZK6820BEVG33);
+        introduction_date:              date(2020,4,26);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   15;
+        reliability_decay:              4;
+
+        power:                          200 kW;
+        weight:                         8.8 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          100 km/h;
+
+        cargo_capacity:                 34;
+        loading_speed:                  10 << param_loading_speed;
+        cargo_age_period:               285 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_ZK6820BEVG33_graphics;
+        purchase:                       spriteset_ZK6820BEVG33_purchase;
+        cargo_subtype_text:             switch_ZK6820BEVG33_cargo_subtype;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_INTERCITY_COACH), string(STR_SIZE_MEDIUM), string(STR_COMFORT, 285 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 10), string(STR_POWERTRAIN_TYPE, string(STR_ELECTRIC)));
+
+        cost_factor:                    340;
+        running_cost_factor:            5 * runningcostfactor();
+        purchase_running_cost_factor:   5 * 8;
+        name:                           switch_ZK6820BEVG33_name;
+    }
+}
+
+// End ZK6820BEVG33

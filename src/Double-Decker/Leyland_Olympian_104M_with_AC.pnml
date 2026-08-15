@@ -1,0 +1,89 @@
+// Begin Leyland_Olympian_104M_with_AC
+
+switch (FEAT_ROADVEHS, SELF, switch_Leyland_Olympian_104M_with_AC_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_LEYLAND_OLYMPIAN);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_Leyland_Olympian_104M_with_AC_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Double-Decker", "LEYLAND_OLYMPIAN_103_4M_ORIGINAL_ALX_RH")
+}
+
+spriteset (spriteset_Leyland_Olympian_104M_with_AC_original_ALX_RH, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Double-Decker", "LEYLAND_OLYMPIAN_103_4M_ORIGINAL_ALX_RH")
+}
+
+spriteset (spriteset_Leyland_Olympian_104M_with_AC_CTB_ALX_RH, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Double-Decker", "LEYLAND_OLYMPIAN_104M_CTB_ALX_RH")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_Leyland_Olympian_104M_with_AC_cargo_subtype, cargo_subtype) {
+    0: return string(STR_ORIGINAL_ALX_RH);
+    1: return string(STR_CTB_ALX_RH);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_Leyland_Olympian_104M_with_AC_cargo_graphics, cargo_subtype) {
+    0: spriteset_Leyland_Olympian_104M_with_AC_original_ALX_RH;
+    1: spriteset_Leyland_Olympian_104M_with_AC_CTB_ALX_RH;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_Leyland_Olympian_104M_with_AC_graphics, position_in_articulated_veh) {
+    0: switch_Leyland_Olympian_104M_with_AC_cargo_graphics;
+    empty_sprites;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_Leyland_Olympian_104M_with_AC_articulated_part, extra_callback_info1) {
+    1: return Leyland_Olympian_104M_with_AC;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, Leyland_Olympian_104M_with_AC) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:                  Leyland_Olympian_96M_without_AC;
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         7;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_LEYLAND_OLYMPIAN_104M_WITH_AC);
+        introduction_date:              date(1991,1,1);
+        model_life:                     60;
+        retire_early:                   50;
+        vehicle_life:                   20;
+        reliability_decay:              12;
+
+        power:                          245 hp;
+        weight:                         12 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          70 km/h;
+
+        cargo_capacity:                 62;
+        loading_speed:                  40 << param_loading_speed;
+        cargo_age_period:               162 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_Leyland_Olympian_104M_with_AC_graphics;
+        purchase:                       spriteset_Leyland_Olympian_104M_with_AC_purchase;
+        length:                         switch_8_2_length_10;
+        cargo_subtype_text:             switch_Leyland_Olympian_104M_with_AC_cargo_subtype;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT_WITHOUT_CLASS, 162), string(STR_LOADING_SPEED, 40), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+        articulated_part:               switch_Leyland_Olympian_104M_with_AC_articulated_part;
+
+        cost_factor:                    200;
+        running_cost_factor:            16 * runningcostfactor();
+        purchase_running_cost_factor:   16 * 8;
+        name:                           switch_Leyland_Olympian_104M_with_AC_name;
+    }
+}
+
+// End Leyland_Olympian_104M_with_AC

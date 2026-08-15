@@ -162,40 +162,34 @@
     {
       "_comment": "block cycle",
       "start": 227,
-      "end": 231,
-      "is_animated_light": true
+      "end": 231
     },
     {
       "_comment": "fire cycle",
       "start": 232,
-      "end": 238,
-      "is_animated_light": true
+      "end": 238
     },
     {
       "_comment": "red flash",
       "start": 239,
       "end": 240,
-      "smoothness": -2,
-      "is_animated_light": true
+      "smoothness": -2
     },
     {
       "_comment": "yellow blinker",
       "start": 241,
       "end": 244,
-      "smoothness": -2,
-      "is_animated_light": true
+      "smoothness": -2
     },
     {
       "_comment": "water cycle",
       "start": 245,
-      "end": 252,
-      "is_animated_light": true
+      "end": 252
     },
     {
       "_comment": "cargopositor mask",
       "start": 253,
-      "end": 255,
-      "non_renderable": true
+      "end": 255
     }
   ],
   "entries": [

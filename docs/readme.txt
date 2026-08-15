@@ -11,12 +11,13 @@ China Set: Buses is the bus sector of the China set of OpenTTD.
 China Set: Buses is licensed under GPL v2.
 
 This set contains buses covering the whole of China (including Hong Kong, Macao and Taiwan Province), 
-including urban buses, suburban/regional buses, long-distance coaches and tourist coaches.
+including urban buses, suburban/regional buses, intercity buses/coaches, long-distance coaches and tourist coaches.
 
 Bus Classification:
 - Urban Bus: primarily operates in urban areas with few seats and ample standing room.
 - Suburban/Regional Bus: primarily operates in suburban/regional areas with more seats and limited standing room.
-- Long-distance Coach: mainly used for intercity and long-distance services, with a large number of seats and no standing room provided.
+- Intercity Bus/Coach: buses or coaches offering passenger services between nearby cities.
+- Long-distance Coach: mainly used for long-distance services, with a large number of seats and no standing room provided.
 - Tourist Coach: mainly used for high-value services, with luxurious and spacious interior arrangements and no standing room provided.
 
 According to Chinese laws and regulations, buses manufactured in 2013 and later must be equipped with 
@@ -107,10 +108,9 @@ Thanks to:
 - planetmaker
 - Simo333
 - Timberwolf
-- 2cc Trainset Team
-- Finnish Trainset Team
-- JP+ Team
-- xUSSR Team
+
+- CS Bus set team
+- Ikarus set team
 
 Special thanks to everyone whom thanks is due;
 Patch Pack Developers, especially JGR;

@@ -35,7 +35,7 @@ item (FEAT_ROADVEHS, GTQ6105BEVBT20) {
         default_cargo_type:             PASS;
 
         name:                           string(STR_NAME_GTQ6105BEVBT20);
-        introduction_date:              date(2018,1,1);
+        introduction_date:              date(2018,4,4);
         model_life:                     60;
         retire_early:                   50;
         vehicle_life:                   13;
@@ -46,20 +46,20 @@ item (FEAT_ROADVEHS, GTQ6105BEVBT20) {
         tractive_effort_coefficient:    0.3;
         speed:                          70 km/h;
 
-        cargo_capacity:                 29;
+        cargo_capacity:                 43;
         loading_speed:                  40 << param_loading_speed;
-        cargo_age_period:               160 << param_cargo_decay;
+        cargo_age_period:               148 << param_cargo_decay;
     }
     graphics {
         default:                        switch_GTQ6105BEVBT20_graphics;
         purchase:                       spriteset_GTQ6105BEVBT20_purchase;
         length:                         switch_8_2_length_10;
         articulated_part:               switch_GTQ6105BEVBT20_articulated_part;
-        additional_text:                string(STR_DESC_4, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 160 ,string(STR_CLASS_HIGH_2)), string(STR_LOADING_SPEED, 40));
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 148 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 40), string(STR_POWERTRAIN_TYPE, string(STR_ELECTRIC)));
 
-        cost_factor:                    168;
-        running_cost_factor:            1 * runningcostfactor();
-        purchase_running_cost_factor:   1 * 8;
+        cost_factor:                    401;
+        running_cost_factor:            5 * runningcostfactor();
+        purchase_running_cost_factor:   5 * 8;
     }
 }
 

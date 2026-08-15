@@ -1,0 +1,89 @@
+// Begin JS6108GHEVC5
+
+switch (FEAT_ROADVEHS, SELF, switch_JS6108GHEVC5_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_JS6108GHEV);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_JS6108GHEVC5_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Two-Axle", "JS6108GHEVC5_YANGZHOU_GREEN_WHITE")
+}
+
+spriteset (spriteset_JS6108GHEVC5_yangzhou_green_white, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "JS6108GHEVC5_YANGZHOU_GREEN_WHITE")
+}
+
+spriteset (spriteset_JS6108GHEVC5_yanzhou_green_white, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "JS6108GHEVC5_YANZHOU_GREEN_WHITE")
+}
+
+
+switch (FEAT_ROADVEHS, SELF, switch_JS6108GHEVC5_cargo_subtype, cargo_subtype) {
+    0: return string(STR_YANGZHOU_GREEN_WHITE);
+    1: return string(STR_YANZHOU_GREEN_WHITE);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_JS6108GHEVC5_cargo_graphics, cargo_subtype) {
+    0: spriteset_JS6108GHEVC5_yangzhou_green_white;
+    1: spriteset_JS6108GHEVC5_yanzhou_green_white;
+}
+switch (FEAT_ROADVEHS, SELF, switch_JS6108GHEVC5_graphics, position_in_articulated_veh) {
+    0: switch_JS6108GHEVC5_cargo_graphics;
+    empty_sprites;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_JS6108GHEVC5_articulated_part, extra_callback_info1) {
+    1 : return JS6108GHEVC5;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, JS6108GHEVC5) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:					JS6108GHEV17;
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         7;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_JS6108GHEVC5);
+        introduction_date:              date(2015,4,14);
+        model_life:                     60;
+        retire_early:                   50;
+        vehicle_life:                   13;
+        reliability_decay:              12;
+
+        power:                          155 kW;
+        weight:                         12.4 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          70 km/h;
+
+        cargo_capacity:                 37;
+        loading_speed:                  40 << param_loading_speed;
+        cargo_age_period:               113 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_JS6108GHEVC5_graphics;
+        purchase:                       spriteset_JS6108GHEVC5_purchase;
+        cargo_subtype_text:             switch_JS6108GHEVC5_cargo_subtype;
+        length:                         switch_8_2_length_10;
+        articulated_part:               switch_JS6108GHEVC5_articulated_part;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 113 ,string(STR_CLASS_ORDINARY)), string(STR_LOADING_SPEED, 40), string(STR_POWERTRAIN_TYPE, string(STR_HYBRID_2, string(STR_ELECTRIC), string(STR_NG))));
+
+        cost_factor:                    265;
+        running_cost_factor:            8 * runningcostfactor();
+        purchase_running_cost_factor:   8 * 8;
+        name:                           switch_JS6108GHEVC5_name;
+    }
+}
+
+// End JS6108GHEVC5

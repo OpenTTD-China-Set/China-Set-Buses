@@ -1,0 +1,123 @@
+// Begin ZK6128H6QY1_38seats
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6128H6QY1_38seats_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_YUTONG_7);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_ZK6128H6QY1_38seats_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Two-Axle", "ZK6128H6QY1_7_2_WHITE")
+}
+
+spriteset (spriteset_ZK6128H6QY1_38seats_white_6_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6128H6QY1_6_1_WHITE")
+}
+
+spriteset (spriteset_ZK6128H6QY1_38seats_original_6_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6128H6QY1_6_1_ORIGINAL")
+}
+
+spriteset (spriteset_ZK6128H6QY1_38seats_white_6_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6128H6QY1_6_2_WHITE")
+}
+
+spriteset (spriteset_ZK6128H6QY1_38seats_original_6_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6128H6QY1_6_2_ORIGINAL")
+}
+
+spriteset (spriteset_ZK6128H6QY1_38seats_white_7_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6128H6QY1_7_1_WHITE")
+}
+
+spriteset (spriteset_ZK6128H6QY1_38seats_original_7_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6128H6QY1_7_1_ORIGINAL")
+}
+
+spriteset (spriteset_ZK6128H6QY1_38seats_white_7_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6128H6QY1_7_2_WHITE")
+}
+
+spriteset (spriteset_ZK6128H6QY1_38seats_original_7_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6128H6QY1_7_2_ORIGINAL")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6128H6QY1_38seats_cargo_subtype, cargo_subtype) {
+    0: return string(STR_WHITE_6_1_WINDSHIELD);
+    1: return string(STR_ORIGINAL_6_1_WINDSHIELD);
+    2: return string(STR_WHITE_6_2_WINDSHIELD);
+    3: return string(STR_ORIGINAL_6_2_WINDSHIELD);
+    4: return string(STR_WHITE_7_1_WINDSHIELD);
+    5: return string(STR_ORIGINAL_7_1_WINDSHIELD);
+    6: return string(STR_WHITE_7_2_WINDSHIELD);
+    7: return string(STR_ORIGINAL_7_2_WINDSHIELD);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6128H6QY1_38seats_cargo_graphics, cargo_subtype) {
+    0: spriteset_ZK6128H6QY1_38seats_white_6_1;
+    1: spriteset_ZK6128H6QY1_38seats_original_6_1;
+    2: spriteset_ZK6128H6QY1_38seats_white_6_2;
+    3: spriteset_ZK6128H6QY1_38seats_original_6_2;
+    4: spriteset_ZK6128H6QY1_38seats_white_7_1;
+    5: spriteset_ZK6128H6QY1_38seats_original_7_1;
+    6: spriteset_ZK6128H6QY1_38seats_white_7_2;
+    7: spriteset_ZK6128H6QY1_38seats_original_7_2;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6128H6QY1_38seats_graphics, position_in_articulated_veh) {
+    0: switch_ZK6128H6QY1_38seats_cargo_graphics;
+    empty_sprites;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6128H6QY1_38seats_articulated_part, extra_callback_info1) {
+    1 : return ZK6128H6QY1_38seats;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, ZK6128H6QY1_38seats) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:					ZK6820BEVG33;
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         8;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_ZK6128H6QY1_38SEATS);
+        introduction_date:              date(2020,3,30);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   15;
+        reliability_decay:              4;
+
+        power:                          276 kW;
+        weight:                         13.8 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          100 km/h;
+
+        cargo_capacity:                 19 ;
+        loading_speed:                  20 << param_loading_speed;
+        cargo_age_period:               399 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_ZK6128H6QY1_38seats_graphics;
+        purchase:                       spriteset_ZK6128H6QY1_38seats_purchase;
+        cargo_subtype_text:             switch_ZK6128H6QY1_38seats_cargo_subtype;
+        length:                         switch_8_3_length_11;
+        articulated_part:               switch_ZK6128H6QY1_38seats_articulated_part;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_LONG_DISTANCE), string(STR_SIZE_LARGE), string(STR_COMFORT, 399 ,string(STR_CLASS_HIGH_3)), string(STR_LOADING_SPEED, 20), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+        cost_factor:                    289;
+        running_cost_factor:            22 * runningcostfactor();
+        purchase_running_cost_factor:   22 * 8;
+        name:                           switch_ZK6128H6QY1_38seats_name;
+    }
+}
+
+// End ZK6128H6QY1_38seats 

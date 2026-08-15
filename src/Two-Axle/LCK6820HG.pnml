@@ -45,7 +45,7 @@ item (FEAT_ROADVEHS, LCK6820HG) {
         default_cargo_type:             PASS;
 
         name:                           string(STR_NAME_LCK6820HG);
-        introduction_date:              date(2013,02,18);
+        introduction_date:              date(2012,04,27);
         model_life:                     60;
         retire_early:                   50;
         vehicle_life:                   13;
@@ -54,7 +54,7 @@ item (FEAT_ROADVEHS, LCK6820HG) {
         power:                          132 kW;
         weight:                         7.5 ton;
         tractive_effort_coefficient:    0.3;
-        speed:                          70 km/h;
+        speed:                          85 km/h;
 
         cargo_capacity:                 58;
         loading_speed:                  30 << param_loading_speed;
@@ -64,11 +64,11 @@ item (FEAT_ROADVEHS, LCK6820HG) {
         default:                        switch_LCK6820HG_graphics;
         purchase:                       spriteset_LCK6820HG_purchase;
         cargo_subtype_text:             switch_LCK6820HG_cargo_subtype;
-        additional_text:                string(STR_DESC_4, string(STR_TYPE_URBAN), string(STR_SIZE_MEDIUM), string(STR_COMFORT, 112 ,string(STR_CLASS_ORIDINARY)), string(STR_LOADING_SPEED, 30));
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_MEDIUM), string(STR_COMFORT, 112 ,string(STR_CLASS_ORDINARY)), string(STR_LOADING_SPEED, 30), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
 
-        cost_factor:                    152;
-        running_cost_factor:            2 * runningcostfactor();
-        purchase_running_cost_factor:   2 * 8;
+        cost_factor:                    164;
+        running_cost_factor:            14 * runningcostfactor();
+        purchase_running_cost_factor:   14 * 8;
     }
 }
 

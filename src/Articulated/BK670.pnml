@@ -1,0 +1,68 @@
+// Begin BK670
+
+spriteset (spriteset_BK670_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_xl ("Articulated", "Menu/BK670")
+}
+
+spriteset (spriteset_BK670_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Articulated", "BK670_1")
+}
+
+spriteset (spriteset_BK670_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Articulated", "BK670_2")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BK670_articulated_part, extra_callback_info1) {
+    1: return BK670;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BK670_graphics, position_in_articulated_veh) {
+    0: spriteset_BK670_1;
+    1: spriteset_BK670_2;
+}
+
+item (FEAT_ROADVEHS, BK670) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_BK670);
+        introduction_date:              date(1976,1,1);
+        model_life:                     60;
+        retire_early:                   45;       
+        vehicle_life:                   20;
+
+        power:                          180 hp;
+        weight:                         13.92 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          80 km/h;
+        reliability_decay:              12;
+
+        cargo_capacity:                 85;
+        loading_speed:                  60 << param_loading_speed;
+        cargo_age_period:               105 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_BK670_graphics;
+        purchase:                       spriteset_BK670_purchase;
+        articulated_part:               switch_BK670_articulated_part;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_EXTRA_LARGE), string(STR_COMFORT, 105 ,string(STR_CLASS_ORDINARY)), string(STR_LOADING_SPEED, 60), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+
+        cost_factor:                    186;
+        running_cost_factor:            19 * runningcostfactor();
+        purchase_running_cost_factor:   19 * 8;
+        length:                         switch_8_6_length_14;
+    }
+}
+
+// End BK670

@@ -1,0 +1,88 @@
+// Begin KLQ6129KAE51
+
+switch (FEAT_ROADVEHS, SELF, switch_KLQ6129KAE51_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_HIGER_9_COACH);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_KLQ6129KAE51_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Two-Axle", "KLQ6129KAE51_ORIGINAL")
+}
+
+spriteset (spriteset_KLQ6129KAE51_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "KLQ6129KAE51_ORIGINAL")
+}
+
+spriteset (spriteset_KLQ6129KAE51_tianjin, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "KLQ6129KAE51_TJ")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_KLQ6129KAE51_cargo_subtype, cargo_subtype) {
+    0: return string(STR_ORIGINAL);
+    1: return string(STR_TJ_SILVER);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_KLQ6129KAE51_cargo_graphics, cargo_subtype) {
+    0: spriteset_KLQ6129KAE51_original;
+    1: spriteset_KLQ6129KAE51_tianjin;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_KLQ6129KAE51_graphics, position_in_articulated_veh) {
+    0: switch_KLQ6129KAE51_cargo_graphics;
+    empty_sprites;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_KLQ6129KAE51_articulated_part, extra_callback_info1) {
+    1 : return KLQ6129KAE51;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, KLQ6129KAE51) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:					KLQ6109QE4_38seats;
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         8;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_KLQ6129KAE51);
+        introduction_date:              date(2020,2,13);
+        model_life:                     60;
+        retire_early:                   50;
+        vehicle_life:                   15;
+        reliability_decay:              8;
+
+        power:                          261 kW;
+        weight:                         13 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          100 km/h;
+
+        cargo_capacity:                 27 ;
+        loading_speed:                  20 << param_loading_speed;
+        cargo_age_period:               228 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_KLQ6129KAE51_graphics;
+        purchase:                       spriteset_KLQ6129KAE51_purchase;
+        cargo_subtype_text:             switch_KLQ6129KAE51_cargo_subtype;
+        length:                         switch_8_3_length_11;
+        articulated_part:               switch_KLQ6129KAE51_articulated_part;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_INTERCITY_COACH), string(STR_SIZE_LARGE), string(STR_COMFORT, 228 ,string(STR_CLASS_MEDIUM)), string(STR_LOADING_SPEED, 20), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+        cost_factor:                    265;
+        running_cost_factor:            21 * runningcostfactor();
+        purchase_running_cost_factor:   21 * 8;
+        name:                           switch_KLQ6129KAE51_name;
+    }
+}
+
+// End KLQ6129KAE51_38seats

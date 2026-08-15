@@ -50,17 +50,17 @@ item (FEAT_ROADVEHS, JT663) {
 
         cargo_capacity:                 15;
         loading_speed:                  10 << param_loading_speed;
-        cargo_age_period:               138 << param_cargo_decay;
+        cargo_age_period:               191 << param_cargo_decay;
     }
     graphics {
         default:                        switch_JT663_graphics;
         purchase:                       spriteset_JT663_purchase;
         length:                         switch_8_1_length_9;
         articulated_part:               switch_JT663_articulated_part;
-        additional_text:                string(STR_DESC_4, string(STR_TYPE_LONG_DISTANCE), string(STR_SIZE_MEDIUM), string(STR_COMFORT, 138 ,string(STR_CLASS_ORIDINARY)), string(STR_LOADING_SPEED, 10));
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_LONG_DISTANCE), string(STR_SIZE_MEDIUM), string(STR_COMFORT, 191 ,string(STR_CLASS_ORDINARY)), string(STR_LOADING_SPEED, 10), string(STR_POWERTRAIN_TYPE, string(STR_PETROL)));
 
-        cost_factor:                    120;
-        running_cost_factor:            1 * runningcostfactor();
-        purchase_running_cost_factor:   1 * 8;
+        cost_factor:                    130;
+        running_cost_factor:            13 * runningcostfactor();
+        purchase_running_cost_factor:   13 * 8;
     }
 }

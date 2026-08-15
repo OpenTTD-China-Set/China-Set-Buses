@@ -1,31 +1,27 @@
 // Begin SWB6120V4LE
-switch (FEAT_ROADVEHS, SELF, switch_shenhao_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
-    0: return string(STR_LIST_SHENHAO);
-    return CB_RESULT_NO_TEXT;
-}
 
 spriteset (spriteset_SWB6120V4LE_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
     template_purchase_32bpp ("Two-Axle", "SWB6120V4LE")
 }
 
 spriteset (spriteset_SWB6120V4LE_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "SWB6120V4LE")
+    template_standard_0 ("Two-Axle", "SWB6120V4LE")
 }
 
 spriteset (spriteset_SWB6120V4LE_white, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "SWB6120V4LE_WHITE")
+    template_standard_0 ("Two-Axle", "SWB6120V4LE_WHITE")
 }
 
 spriteset (spriteset_SWB6120V4LE_green, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "SWB6120V4LE_PUXI")
+    template_standard_0 ("Two-Axle", "SWB6120V4LE_PUXI")
 }
 
 spriteset (spriteset_SWB6120V4LE_white_green, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "SWB6120V4LE_WHITE_PUXI")
+    template_standard_0 ("Two-Axle", "SWB6120V4LE_WHITE_PUXI")
 }
 
 spriteset (spriteset_SWB6120V4LE_pudong_blue, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "SWB6120V4LE_PUDONG")
+    template_standard_0 ("Two-Axle", "SWB6120V4LE_PUDONG")
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_SWB6120V4LE_cargo_subtype, cargo_subtype) {
@@ -46,12 +42,12 @@ switch (FEAT_ROADVEHS, SELF, switch_SWB6120V4LE_cargo_graphics, cargo_subtype) {
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_SWB6120V4LE_graphics, position_in_articulated_veh) {
-    1: switch_SWB6120V4LE_cargo_graphics;
+    0: switch_SWB6120V4LE_cargo_graphics;
     empty_sprites;
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_SWB6120V4LE_articulated_part, extra_callback_info1) {
-    1..2 : return SWB6120V4LE;
+    1 : return SWB6120V4LE;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
@@ -62,6 +58,7 @@ item (FEAT_ROADVEHS, SWB6120V4LE) {
         running_cost_base:              RUNNING_COST_ROADVEH;
         refit_cost:                     0;
         misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:					SWB6120KHV_3;
 
         cost_factor:                    1;
         running_cost_factor:            1;
@@ -83,7 +80,7 @@ item (FEAT_ROADVEHS, SWB6120V4LE) {
         tractive_effort_coefficient:    0.3;
         speed:                          85 km/h;
 
-        cargo_capacity:                 30;
+        cargo_capacity:                 45;
         loading_speed:                  40 << param_loading_speed;
         cargo_age_period:               155 << param_cargo_decay;
     }
@@ -91,14 +88,14 @@ item (FEAT_ROADVEHS, SWB6120V4LE) {
         default:                        switch_SWB6120V4LE_graphics;
         purchase:                       spriteset_SWB6120V4LE_purchase;
         cargo_subtype_text:             switch_SWB6120V4LE_cargo_subtype;
-        length:                         switch_2_7_2_length_11;
+        length:                         switch_8_3_length_11;
         articulated_part:               switch_SWB6120V4LE_articulated_part;
-        additional_text:                string(STR_DESC_4, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 181 ,string(STR_CLASS_HIGH_2)), string(STR_LOADING_SPEED, 40));
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 155 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 40), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
 
-        cost_factor:                    195;
-        running_cost_factor:            3 * runningcostfactor();
-        purchase_running_cost_factor:   3 * 8;
-        //当“申豪”系列新增其它车辆时取消该注释 name:                           switch_shenhao_name;
+        cost_factor:                    244;
+        running_cost_factor:            17 * runningcostfactor();
+        purchase_running_cost_factor:   17 * 8;
+        name:                           switch_shenhao_name;
     }
 }
 

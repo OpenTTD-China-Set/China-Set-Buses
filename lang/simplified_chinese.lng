@@ -1,10 +1,10 @@
 ##grflangid 0x56
 
-STR_GRF_NAME        :中国包：巴士 {VERSION_STRING}
-STR_GRF_DESC        :OpenTTD中国包的巴士部分。
+STR_GRF_NAME        :中国包：客车 {VERSION_STRING}
+STR_GRF_DESC        :OpenTTD中国包的客车部分。
 STR_GRF_URL         :https://www.tt-forums.net/viewtopic.php?t=91092
-STR_GRF_DESC_EXTRA  :中国大陆的公共汽车，包括公交车、长途客车、无轨电车。未来会有更多内容。
-STR_GRF_DESC_README :更多信息请查看Readme。{RED}目前版本并非完全体,不建议放入正式游玩长久存档。
+STR_GRF_DESC_EXTRA  :中国的客车，包括城市客车、公路客车、无轨电车。未来会有更多内容。
+STR_GRF_DESC_README :更多信息请查看Readme。
 
 STR_PARAM_LOADING_SPEED         :装载速度
 STR_PARAM_LOADING_SPEED_DESC    :调整车辆装载速度。默认为100%。
@@ -22,66 +22,184 @@ STR_PARAM_VERY_LONG         :很长
 
 STR_USED_WITH_DYNAMIC_ENGINES       :请切换至控制台模式, 键入 "set dynamic_engines 1", 否则您无法游玩中国包。
 
-STR_NAME_KLQ6129GE4_HIGH_SPEC       :KLQ6129GE4  {SILVER}高配版
-STR_NAME_KLQ6129GE4_STANDARD        :KLQ6129GE4  {SILVER}标配版
-STR_NAME_LEYLAND_OLYMPIAN_11M       :利兰奥林比安  {SILVER}11.3米
-STR_NAME_SWB6128V8LF_3D             :SWB6128V8LF  {SILVER}3门版
-STR_NAME_XML6102J15Y_36SEATS        :XML6102J15Y  {SILVER}36座
-STR_NAME_XML6102J15Y_48SEATS        :XML6102J15Y  {SILVER}48座
-STR_NAME_ZK6125CHEVNPG29_HIGH_SPEC  :ZK6125CHEVNPG29  {SILVER}高配版
-STR_NAME_ZK6125CHEVNPG29_STANDARD   :ZK6125CHEVNPG29  {SILVER}标配版
-
-STR_LIST_SHENHAO            :“申豪”系列
-STR_LIST_SUNWIN_8           :申沃8系
-
 STR_X                       :待定
 STR_RELDEC                  :可靠性下降速度：{COMMA}
 STR_LOADING_SPEED           :{BLACK}装载速度：{GOLD}{COMMA}
 STR_LIVERY_AVAILABLE        :{BLACK}可供选择的涂装：
 STR_TYPE_URBAN              :{BLACK}类型：{LTBLUE}城市客车
 STR_TYPE_REGIONAL           :{BLACK}类型：{YELLOW}城郊客车
+STR_TYPE_INTERCITY_BUS      :{BLACK}类型：{GREEN}城际客车（公交）
+STR_TYPE_INTERCITY_COACH    :{BLACK}类型：{WHITE}城际客车（班线）
 STR_TYPE_LONG_DISTANCE      :{BLACK}类型：{WHITE}长途客车
 STR_TYPE_TOURIST            :{BLACK}类型：{WHITE}旅游客车
 STR_SIZE_MINI               :{BLACK}尺寸：{YELLOW}小型
 STR_SIZE_MEDIUM             :{BLACK}尺寸：{GREEN}中型
 STR_SIZE_LARGE              :{BLACK}尺寸：{LTBLUE}大型
 STR_SIZE_EXTRA_LARGE        :{BLACK}尺寸：{WHITE}特大型
-STR_CLASS_ORIDINARY         :{RED}普通级
+STR_CLASS_ORDINARY          :{RED}普通级
 STR_CLASS_MEDIUM            :{YELLOW}中级
 STR_CLASS_HIGH_1            :{GREEN}高一级
 STR_CLASS_HIGH_2            :{LTBLUE}高二级
 STR_CLASS_HIGH_3            :{WHITE}高三级
+STR_POWERTRAIN_TYPE         :{BLACK}能源类型：{STRING}
+STR_PETROL                  :{RED}汽油
+STR_DIESEL                  :{YELLOW}柴油
+STR_COAL_GAS                :{YELLOW}瓦斯气
+STR_LPG                     :{GREEN}液化石油气
+STR_NG                      :{GREEN}天然气
+STR_ELECTRIC                :{LTBLUE}电力
+STR_HYDROGEN                :{WHITE}氢能源
+STR_HYBRID_2                :{GOLD}混合动力（{STRING}, {STRING}{GOLD}）
+STR_HYBRID_3                :{GOLD}混合动力（{STRING}, {STRING}, {STRING}{GOLD}）
 STR_COMFORT                 :{BLACK}舒适度：{GOLD}{COMMA}{BLACK}（{STRING}{BLACK}）
 STR_COMFORT_WITHOUT_CLASS   :{BLACK}舒适度：{GOLD}{COMMA}
 
-STR_1L                      :{BLACK}一级踏步版本
-STR_2D                      :{BLACK}两侧车门版本
-STR_2L                      :{BLACK}二级踏步版本
-STR_2L_TJ                   :{RED}天{SILVER}津公交集{RED}团{BLACK}二级踏步版本
-STR_BJ_BAFANGDA             :{BLACK}北京公交{GREEN}“八{WHITE}方{GREEN}达”{BLACK}涂装
-STR_BJ_BEIDIANLAN           :{SILVER}北京公交电车{WHITE}分公司{LTBLUE}蓝色涂装
-STR_BJ_BLUE_LUCKY_CLOUDS    :{BLACK}北京公交{LTBLUE}“蓝祥云”{BLACK}涂装
-STR_BJ_GREEN_LUCKY_CLOUDS   :{BLACK}北京公交{GREEN}“绿祥云”{BLACK}涂装
-STR_BJ_RED_LUCKY_CLOUDS     :{BLACK}北京公交{RED}“红祥云”{BLACK}涂装
-STR_BJ_YUNTONG              :{RED}北京{SILVER}运通{RED}客运{BLACK}涂装
-STR_CJ                      :{CREAM}昌吉公交集团{BLACK}涂装
-STR_CB                      :{BLACK}香港{YELLOW}城巴{RED}集{BLUE}团{BLACK}涂装
-STR_DT                      :{BLUE}大同公交{LTBLUE}集团{BLACK}涂装
-STR_FC_ORIGINAL             :{BLACK}“风采”造型{GREEN}原版{BLACK}涂装
-STR_HB                      :{YELLOW}哈尔滨公交集团{BLACK}涂装
-STR_KLB                     :{BLACK}香港{WHITE}九龙{RED}巴士{BLACK}涂装
-STR_ORIGINAL                :{BLACK}原版涂装
-STR_SH_GREEN                :{BLACK}上海{GREEN}绿色{BLACK}涂装
-STR_SH_PUDONG_BLUE          :{BLACK}上海{WHITE}浦东{BLUE}蓝色{BLACK}涂装
-STR_SH_WHITE_GREEN          :{BLACK}上海{WHITE}白眼{GREEN}绿色{BLACK}涂装
-STR_SY                      :{WHITE}沈阳{BLUE}客运{DKGREEN}集{GOLD}团{BLACK}涂装
-STR_TJ                      :{RED}天{SILVER}津公交集{RED}团{BLACK}涂装
-STR_TJ_YING                 :{BLACK}“飞鹰”造型{RED}天{SILVER}津公交集{RED}团{BLACK}涂装
-STR_TJBH                    :{YELLOW}天津滨海{BLUE}公交{DKGREEN}集团{BLACK}涂装
-STR_TJBH_WHITE              :{WHITE}天津滨海{BLUE}公交{DKGREEN}集团{WHITE}白色{BLACK}涂装
-STR_VIP                     :{GOLD}“VIP”{BLACK}涂装
-STR_WHITE                   :{WHITE}白色{BLACK}涂装
-STR_YG_ORIGINAL             :{BLACK}“阳光”造型{GREEN}原版{BLACK}涂装
-STR_YG_TJ                   :{BLACK}“阳光”造型{RED}天{SILVER}津公交集{RED}团{BLACK}涂装
+# 折叠栏 A to Z
+STR_LIST_HIGER_9_BUS                :海格9系城市客车
+STR_LIST_HIGER_9_COACH              :海格9系公路客车
+STR_LIST_HIGER_NEW_HAIWEI           :海格新海威系列
+STR_LIST_LEYLAND_OLYMPIAN           :利兰奥林比安
+STR_LIST_SHENHAO                    :“申豪”系列
+STR_LIST_SUNWIN_8                   :申沃8系
+STR_LIST_VOLVO_OLYMPIAN             :富豪奥林比安
+STR_LIST_VOLVO_SUPER_OLYMPIAN       :富豪超级奥林比安
+STR_LIST_YUTONG_7                   :宇通7系
+STR_LIST_YUTONG_E8                  :宇通E8系列
+STR_LIST_YUTONG_E10                 :宇通E10系列
+STR_LIST_YUTONG_E12                 :宇通E12系列
+STR_LIST_YUTONG_H10                 :宇通H10系列
+
+# 车辆名称 A to Z
+STR_NAME_BFC6120_46SEATS                    :BFC6120  {SILVER}46座
+STR_NAME_BFC6120_54SEATS                    :BFC6120  {SILVER}54座
+STR_NAME_DD6141S02_STANDARD                 :DD6141S02  {SILVER}标准版
+STR_NAME_DD6141S02_HIGH_SPEC                :DD6141S02  {SILVER}高配版
+STR_NAME_JNP6127FEA_38SEATS                 :JNP6127FEA  {SILVER}38座
+STR_NAME_JNP6127FEA_54SEATS                 :JNP6127FEA  {SILVER}54座
+STR_NAME_JNP6127FEA_60SEATS                 :JNP6127FEA  {SILVER}60座
+STR_NAME_KLQ6109QE4_38SEATS                 :KLQ6109QE4  {SILVER}38座
+STR_NAME_KLQ6109QE4_46SEATS                 :KLQ6109QE4  {SILVER}46座
+STR_NAME_KLQ6129GE4_HIGH_SPEC               :KLQ6129GE4  {SILVER}高配版
+STR_NAME_KLQ6129GE4_STANDARD                :KLQ6129GE4  {SILVER}标配版
+STR_NAME_LEYLAND_OLYMPIAN_11M_WITH_AC       :利兰奥林比安  {SILVER}11米 空调版
+STR_NAME_LEYLAND_OLYMPIAN_11M_WITHOUT_AC    :利兰奥林比安  {SILVER}11米 普通版
+STR_NAME_LEYLAND_OLYMPIAN_12M_2D_WITH_AC    :利兰奥林比安  {SILVER}12米 双门空调版
+STR_NAME_LEYLAND_OLYMPIAN_12M_3D_WITHOUT_AC :利兰奥林比安  {SILVER}12米 三门普通版
+STR_NAME_LEYLAND_OLYMPIAN_12M_INTERCITY     :利兰奥林比安  {SILVER}12米 客车版
+STR_NAME_LEYLAND_OLYMPIAN_96M_WITHOUT_AC    :利兰奥林比安  {SILVER}9.6米 普通版
+STR_NAME_LEYLAND_OLYMPIAN_103M_WITHOUT_AC   :利兰奥林比安  {SILVER}10.3米 普通版
+STR_NAME_LEYLAND_OLYMPIAN_104M_WITH_AC      :利兰奥林比安  {SILVER}10.4米 空调版
+STR_NAME_SWB6128V8LF_3D                     :SWB6128V8LF  {SILVER}3门版
+STR_NAME_VOLVO_OLYMPIAN_104M_WITH_AC        :富豪奥林比安  {SILVER}10.4米 空调版
+STR_NAME_VOLVO_OLYMPIAN_113M_WITH_AC        :富豪奥林比安  {SILVER}11.3米 空调版
+STR_NAME_VOLVO_OLYMPIAN_12M_WITH_AC_1D      :富豪奥林比安  {SILVER}12米 单门空调版
+STR_NAME_VOLVO_OLYMPIAN_12M_WITH_AC_2D      :富豪奥林比安  {SILVER}12米 双门空调版
+STR_NAME_VOLVO_SUPER_OLYMPIAN_106M          :富豪超级奥林比安  {SILVER}10.6米
+STR_NAME_VOLVO_SUPER_OLYMPIAN_12M           :富豪超级奥林比安  {SILVER}12米
+STR_NAME_XML6102J15Y_36SEATS                :XML6102J15Y  {SILVER}36座
+STR_NAME_XML6102J15Y_48SEATS                :XML6102J15Y  {SILVER}48座
+STR_NAME_ZK6106BEVG4_MORE_SEATS             :ZK6106BEVG4  {SILVER}多座位布局
+STR_NAME_ZK6125CHEVNPG29_HIGH_SPEC          :ZK6125CHEVNPG29  {SILVER}高配版
+STR_NAME_ZK6125CHEVNPG29_STANDARD           :ZK6125CHEVNPG29  {SILVER}标配版
+STR_NAME_ZK6126BEVG3_MORE_SEATS             :ZK6126BEVG3  {SILVER}多座位布局
+STR_NAME_ZK6117H6Y1_30SEATS                 :ZK6117H6Y1  {SILVER}30座
+STR_NAME_ZK6117H6Y1_36SEATS                 :ZK6117H6Y1  {SILVER}36座
+STR_NAME_ZK6117H6Y1_48SEATS                 :ZK6117H6Y1  {SILVER}48座
+STR_NAME_ZK6128H6QY1_38SEATS                :ZK6128H6QY1  {SILVER}38座
+STR_NAME_ZK6128H6QY1_50SEATS                :ZK6128H6QY1  {SILVER}50座
+STR_NAME_ZK6137H16QY1_38SEATS               :ZK6137H16QY1  {SILVER}38座
+STR_NAME_ZK6137H16QY1_54SEATS               :ZK6137H16QY1  {SILVER}54座
+STR_NAME_ZK6820BEVG33_2D                    :ZK6820BEVG33  {SILVER}双门版
+STR_NAME_ZK6856BEVG4_MORE_SEATS             :ZK6856BEVG4  {SILVER}多座位布局
+STR_NAME_ZK6856BEVG22L_MORE_SEATS           :ZK6856BEVG22L  {SILVER}多座位布局
+STR_NAME_ZK6907H6Y_26SEATS                  :ZK6907H6Y  {SILVER}26座
+STR_NAME_ZK6907H6Y_39SEATS_STANDARD         :ZK6907H6Y  {SILVER}38座标准版
+STR_NAME_ZK6907H6Y_39SEATS_HIGH_SPEC        :ZK6907H6Y  {SILVER}38座高配版
+
+# 涂装分支名称 A to Z
+STR_1L                              :{BLACK}一级踏步版本
+STR_2D                              :{BLACK}两侧车门版本
+STR_2L                              :{BLACK}二级踏步版本
+STR_2L_TJ                           :{RED}天{SILVER}津公交集{RED}团{BLACK}二级踏步版本
+STR_BJ                              :{SILVER}北京{GOLD}公交{BLUE}集团{BLACK}涂装
+STR_BJ_2                            :{RED}北京{WHITE}公{LTBLUE}交{RED}集团{BLACK}涂装
+STR_BJ_2_QN                         :{RED}北京{WHITE}公{LTBLUE}交{RED}集团{BLACK}“青年文明号”涂装
+STR_BJ_2008_OLYMPIC                 :{GREEN}北京{RED}2008年{GREEN}奥运会{BLACK}涂装
+STR_BJ_3                            :{SILVER}北京{BLUE}公{YELLOW}交{SILVER}集团{BLACK}涂装
+STR_BJ_BAFANGDA                     :{BLACK}北京公交{GREEN}“八{WHITE}方{GREEN}达”{BLACK}涂装
+STR_BJ_BEIDIANLAN                   :{SILVER}北京公交电车{WHITE}分公司{LTBLUE}蓝色{BLACK}涂装
+STR_BJ_BLUE_LUCKY_CLOUDS            :{BLACK}北京公交{LTBLUE}“蓝祥云”{BLACK}涂装
+STR_BJ_BRT                          :{SILVER}北京公交{GOLD}B{BLUE}RT{BLACK}涂装
+STR_BJ_GREEN_LUCKY_CLOUDS           :{BLACK}北京公交{GREEN}“绿祥云”{BLACK}涂装
+STR_BJ_RED_LUCKY_CLOUDS             :{BLACK}北京公交{RED}“红祥云”{BLACK}涂装
+STR_BJ_YUNTONG                      :{RED}北京{SILVER}运通{RED}客运{BLACK}涂装
+STR_CHENGDE                         :{LTBLUE}承德{BLUE}公交{ORANGE}集团{BLACK}涂装
+STR_CJ                              :{CREAM}昌吉公交集团{BLACK}涂装
+STR_CMB                             :{WHITE}中华{LTBLUE}汽车{BLACK}涂装
+STR_CTB                             :{YELLOW}香港{RED}城市{BLUE}巴士{BLACK}涂装
+STR_CTB_ALX500                      :{YELLOW}香港{RED}城市{BLUE}巴士{BLACK}涂装亚历山大ALX500车身
+STR_CTB_ALX_RH                      :{YELLOW}香港{RED}城市{BLUE}巴士{BLACK}涂装亚历山大RH车身
+STR_DBTS                            :{PURPLE}愉景湾{WHITE}巴士{PURPLE}服务{BLACK}涂装
+STR_DT                              :{BLUE}大同公交{LTBLUE}集团{BLACK}涂装
+STR_FC_ORIGINAL                     :{BLACK}“风采”造型{GREEN}原版{BLACK}涂装
+STR_HB                              :{YELLOW}哈尔滨公交集团{BLACK}涂装
+STR_KMB                             :{RED}九龙{WHITE}巴士{BLACK}涂装
+STR_KMB_ALX500                      :{RED}九龙{WHITE}巴士{BLACK}涂装亚历山大ALX500车身
+STR_KMB_ALX_RH                      :{RED}九龙{WHITE}巴士{BLACK}涂装亚历山大RH车身
+STR_KMB_CR223LD                     :{RED}九龙{WHITE}巴士{BLACK}涂装傲群CR223LD车身
+STR_KMB_ECW                         :{RED}九龙{WHITE}巴士{BLACK}涂装ECW车身
+STR_KMB_ECW_2                       :{RED}九龙{WHITE}巴士{BLACK}涂装ECW车身样式2
+STR_KMB_EXPLORER                    :{RED}九龙{WHITE}巴士{BLACK}涂装莱特Explorer车身
+STR_KMB_FIRST_ALX_RH                :{RED}九龙{WHITE}巴士{BLACK}涂装亚历山大RH车身首次量产版
+STR_KMB_NORMAL_ALX_RH               :{RED}九龙{WHITE}巴士{BLACK}涂装亚历山大RH车身普通版
+STR_LWB                             :{ORANGE}龙运{WHITE}巴士{BLACK}涂装
+STR_NWFB                            :{GREEN}新世界{WHITE}第一{WHITE}巴士{BLACK}涂装
+STR_NWFB_ALX500                     :{GREEN}新世界{WHITE}第一{WHITE}巴士{BLACK}涂装亚历山大ALX500车身
+STR_ON200_203_ORIGINAL_ALX_RH       :{BLACK}原版涂装亚历山大RH车身ON200-203
+STR_ON200_203_KMB_ALX_RH            :{RED}九龙{WHITE}巴士{BLACK}涂装亚历山大RH涂装ON200-203
+STR_ON204_CTB                       :{YELLOW}香港{RED}城市{BLUE}巴士{BLACK}涂装ON204
+STR_ON204_KMB                       :{RED}九龙{WHITE}巴士{BLACK}涂装ON204
+STR_ORIGINAL                        :{BLACK}原版涂装
+STR_ORIGINAL_1_WINDSHIELD           :{BLACK}单风挡原版涂装
+STR_ORIGINAL_2_WINDSHIELD           :{BLACK}双风挡原版涂装
+STR_ORIGINAL_6_1_WINDSHIELD         :{BLACK}宇通6系单风挡原版涂装
+STR_ORIGINAL_6_2_WINDSHIELD         :{BLACK}宇通6系双风挡原版涂装
+STR_ORIGINAL_7_1_WINDSHIELD         :{BLACK}宇通7系单风挡原版涂装
+STR_ORIGINAL_7_2_WINDSHIELD         :{BLACK}宇通7系双风挡原版涂装
+STR_ORIGINAL_ALX500                 :{BLACK}原版涂装亚历山大ALX500车身
+STR_ORIGINAL_ALX_RH                 :{BLACK}原版涂装亚历山大RH车身
+STR_ORIGINAL_CR223LD                :{BLACK}原版涂装傲群CR223LD车身
+STR_ORIGINAL_ECW                    :{BLACK}原版涂装ECW车身
+STR_ORIGINAL_EXPLORER               :{BLACK}原版涂装莱特Explorer车身
+STR_ORIGINAL_FIRST_ALX_RH           :{BLACK}原版涂装亚历山大RH车身首次量产版
+STR_ORIGINAL_NORMAL_ALX_RH          :{BLACK}原版涂装亚历山大RH车身普通版
+STR_SH_GREEN                        :{BLACK}上海{GREEN}绿色{BLACK}涂装
+STR_SH_PUDONG_BLUE                  :{BLACK}上海{WHITE}浦东{BLUE}蓝色{BLACK}涂装
+STR_SH_WHITE_GREEN                  :{BLACK}上海{WHITE}白眼{GREEN}绿色{BLACK}涂装
+STR_SILVER                          :{SILVER}银色{BLACK}涂装
+STR_SY                              :{WHITE}沈阳{BLUE}客运{DKGREEN}集{GOLD}团{BLACK}涂装
+STR_TAIZHOU                         :{LTBLUE}泰州公交集团{BLACK}涂装
+STR_TIANSHUI_RED                    :{RED}天水羲通公交{GOLD}集团{BLACK}涂装
+STR_TJ_GOLD                         :{RED}天{GOLD}津公交集{RED}团{BLACK}涂装
+STR_TJ_SILVER                       :{RED}天{SILVER}津公交集{RED}团{BLACK}涂装
+STR_TJ_SSTEC                        :{WHITE}天津中新{GREEN}生{DKGREEN}态{GOLD}城{BLACK}涂装
+STR_TJ_YING                         :{BLACK}“飞鹰”造型{RED}天{SILVER}津公交集{RED}团{BLACK}涂装
+STR_TJBH                            :{YELLOW}天津滨海{BLUE}公交{DKGREEN}集团{BLACK}涂装
+STR_URUMQI_JUMBO                    :{YELLOW}乌鲁木齐{WHITE}珍{RED}宝{DKGREEN}巴士{BLACK}涂装
+STR_TJBH_WHITE                      :{WHITE}天津滨海{BLUE}公交{DKGREEN}集团{WHITE}白色{BLACK}涂装
+STR_VIP                             :{GOLD}“VIP”{BLACK}涂装
+STR_WHITE                           :{WHITE}白色{BLACK}涂装
+STR_WHITE_1_WINDSHIELD              :{BLACK}单风挡{WHITE}白色{BLACK}涂装
+STR_WHITE_2_WINDSHIELD              :{BLACK}双风挡{WHITE}白色{BLACK}涂装
+STR_WHITE_6_1_WINDSHIELD            :{BLACK}宇通6系单风挡{WHITE}白色{BLACK}涂装
+STR_WHITE_6_2_WINDSHIELD            :{BLACK}宇通6系双风挡{WHITE}白色{BLACK}涂装
+STR_WHITE_7_1_WINDSHIELD            :{BLACK}宇通7系单风挡{WHITE}白色{BLACK}涂装
+STR_WHITE_7_2_WINDSHIELD            :{BLACK}宇通7系双风挡{WHITE}白色{BLACK}涂装
+STR_YANGZHOU                        :{WHITE}扬州公交{LTBLUE}集团{BLACK}涂装
+STR_YANGZHOU_DKBLUE                 :{BLUE}扬州{LTBLUE}公交集团{BLACK}涂装
+STR_YANGZHOU_GREEN_WHITE            :{GREEN}扬州{WHITE}公交集团{BLACK}涂装
+STR_YANZHOU_GREEN_WHITE             :{GREEN}兖州公交{WHITE}集团{BLACK}涂装
+STR_YG_ORIGINAL                     :{BLACK}“阳光”造型{GREEN}原版{BLACK}涂装
+STR_YG_TJ                           :{BLACK}“阳光”造型{RED}天{SILVER}津公交集{RED}团{BLACK}涂装
 
 

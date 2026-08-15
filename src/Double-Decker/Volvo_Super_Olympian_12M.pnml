@@ -1,0 +1,125 @@
+// Begin Volvo_Super_Olympian_12M
+
+switch (FEAT_ROADVEHS, SELF, switch_Volvo_Super_Olympian_12M_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_VOLVO_SUPER_OLYMPIAN);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_Volvo_Super_Olympian_12M_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Double-Decker", "VOLVO_SUPEROLYMPIAN_12M_ORIGINAL_ALX500")
+}
+
+spriteset (spriteset_Volvo_Super_Olympian_12M_original_ALX500, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Double-Decker", "VOLVO_SUPEROLYMPIAN_12M_ORIGINAL_ALX500")
+}
+
+spriteset (spriteset_Volvo_Super_Olympian_12M_original_CR223L, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Double-Decker", "VOLVO_SUPEROLYMPIAN_12M_ORIGINAL_CR223L")
+}
+
+spriteset (spriteset_Volvo_Super_Olympian_12M_original_explorer, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Double-Decker", "VOLVO_SUPEROLYMPIAN_12M_ORIGINAL_EXPLORER")
+}
+
+spriteset (spriteset_Volvo_Super_Olympian_12M_CTB_ALX500, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Double-Decker", "VOLVO_SUPEROLYMPIAN_12M_CTB_ALX500")
+}
+
+spriteset (spriteset_Volvo_Super_Olympian_12M_KMB_ALX500, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Double-Decker", "VOLVO_SUPEROLYMPIAN_12M_KMB_ALX500")
+}
+
+spriteset (spriteset_Volvo_Super_Olympian_12M_KMB_CR223L, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Double-Decker", "VOLVO_SUPEROLYMPIAN_12M_KMB_CR223L")
+}
+
+spriteset (spriteset_Volvo_Super_Olympian_12M_KMB_explorer, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Double-Decker", "VOLVO_SUPEROLYMPIAN_12M_KMB_EXPLORER")
+}
+
+spriteset (spriteset_Volvo_Super_Olympian_12M_NWFB_ALX500, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Double-Decker", "VOLVO_SUPEROLYMPIAN_12M_NWFB_ALX500")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_Volvo_Super_Olympian_12M_cargo_subtype, cargo_subtype) {
+    0: return string(STR_ORIGINAL_ALX500);
+    1: return string(STR_ORIGINAL_CR223LD);
+    2: return string(STR_ORIGINAL_EXPLORER);
+    3: return string(STR_CTB_ALX500);
+    4: return string(STR_KMB_ALX500);
+    5: return string(STR_KMB_CR223LD);
+    6: return string(STR_KMB_EXPLORER);
+    7: return string(STR_NWFB_ALX500);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_Volvo_Super_Olympian_12M_cargo_graphics, cargo_subtype) {
+    0: spriteset_Volvo_Super_Olympian_12M_original_ALX500;
+    1: spriteset_Volvo_Super_Olympian_12M_original_CR223L;
+    2: spriteset_Volvo_Super_Olympian_12M_original_explorer;
+    3: spriteset_Volvo_Super_Olympian_12M_CTB_ALX500;
+    4: spriteset_Volvo_Super_Olympian_12M_KMB_ALX500;
+    5: spriteset_Volvo_Super_Olympian_12M_KMB_CR223L;
+    6: spriteset_Volvo_Super_Olympian_12M_KMB_explorer;
+    7: spriteset_Volvo_Super_Olympian_12M_NWFB_ALX500;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_Volvo_Super_Olympian_12M_graphics, position_in_articulated_veh) {
+    0: switch_Volvo_Super_Olympian_12M_cargo_graphics;
+    empty_sprites;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_Volvo_Super_Olympian_12M_articulated_part, extra_callback_info1) {
+    1 : return Volvo_Super_Olympian_12M;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, Volvo_Super_Olympian_12M) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:                  Volvo_Super_Olympian_106M;
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         7;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_VOLVO_SUPER_OLYMPIAN_12M);
+        introduction_date:              date(1999,8,1);
+        model_life:                     60;
+        retire_early:                   50;
+        vehicle_life:                   20;
+        reliability_decay:              12;
+
+        power:                          285 hp;
+        weight:                         12 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          70 km/h;
+
+        cargo_capacity:                 66;
+        loading_speed:                  40 << param_loading_speed;
+        cargo_age_period:               165 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_Volvo_Super_Olympian_12M_graphics;
+        purchase:                       spriteset_Volvo_Super_Olympian_12M_purchase;
+        length:                         switch_8_3_length_11;
+        cargo_subtype_text:             switch_Volvo_Super_Olympian_12M_cargo_subtype;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT_WITHOUT_CLASS, 165), string(STR_LOADING_SPEED, 40), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+        articulated_part:               switch_Volvo_Super_Olympian_12M_articulated_part;
+
+        cost_factor:                    244;
+        running_cost_factor:            16 * runningcostfactor();
+        purchase_running_cost_factor:   16 * 8;
+        name:                           switch_Volvo_Super_Olympian_12M_name;
+    }
+}
+
+// End Volvo_Super_Olympian_12M

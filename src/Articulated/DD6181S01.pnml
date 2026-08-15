@@ -1,0 +1,78 @@
+// Begin DD6181S01
+
+spriteset (spriteset_DD6181S01_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_xl ("Articulated", "Menu/DD6181S01_BJ")
+}
+
+spriteset (spriteset_DD6181S01_BJ_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Articulated", "DD6181S01_BJ_1")
+}
+
+spriteset (spriteset_DD6181S01_BJ_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard__1 ("Articulated", "DD6181S01_BJ_2")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_DD6181S01_cargo_subtype, cargo_subtype) {
+    0: return string(STR_BJ);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_DD6181S01_BJ_cargo_graphics, position_in_articulated_veh) {
+    0: spriteset_DD6181S01_BJ_1;
+    1: spriteset_DD6181S01_BJ_2;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_DD6181S01_graphics, cargo_subtype) {
+    0: switch_DD6181S01_BJ_cargo_graphics;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_DD6181S01_articulated_part, extra_callback_info1) {
+    1: return DD6181S01;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, DD6181S01) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_DD6160S03);
+        introduction_date:              date(2006,5,23);
+        model_life:                     60;
+        retire_early:                   50;       
+        vehicle_life:                   13;
+        reliability_decay:              8;
+
+        power:                          184 kW;
+        weight:                         16.9 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          70 km/h;
+
+        cargo_capacity:                 85;
+        loading_speed:                  60 << param_loading_speed;
+        cargo_age_period:               123 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_DD6181S01_graphics;
+        purchase:                       spriteset_DD6181S01_purchase;
+        cargo_subtype_text:             switch_DD6181S01_cargo_subtype;
+        articulated_part:               switch_DD6181S01_articulated_part;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_EXTRA_LARGE), string(STR_COMFORT, 137 ,string(STR_CLASS_ORDINARY)), string(STR_LOADING_SPEED, 60), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+
+        cost_factor:                    285;
+        running_cost_factor:            19 * runningcostfactor();
+        purchase_running_cost_factor:   19 * 8;
+        length:                         switch_8_7_length_15;
+    }
+}
+
+// End DD6181S01

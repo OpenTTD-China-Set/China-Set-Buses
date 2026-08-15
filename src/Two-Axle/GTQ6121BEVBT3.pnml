@@ -5,21 +5,21 @@ spriteset (spriteset_GTQ6121BEVBT3_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) 
 }
 
 spriteset (spriteset_GTQ6121BEVBT3_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "GTQ6121BEVBT3")
+    template_standard_0 ("Two-Axle", "GTQ6121BEVBT3")
 }
 
 spriteset (spriteset_GTQ6121BEVBT3_BJ_BEIDIANLAN, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "GTQ6121BEVBT3_BJ_BEIDIANLAN")
+    template_standard_0 ("Two-Axle", "GTQ6121BEVBT3_BJ_BEIDIANLAN")
 }
 
 spriteset (spriteset_GTQ6121BEVBT3_TJ, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "GTQ6121BEVBT3_TJ")
+    template_standard_0 ("Two-Axle", "GTQ6121BEVBT3_TJ")
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_GTQ6121BEVBT3_cargo_subtype, cargo_subtype) {
     0: return string(STR_ORIGINAL);
     1: return string(STR_BJ_BEIDIANLAN);
-    2: return string(STR_TJ);
+    2: return string(STR_TJ_SILVER);
     return CB_RESULT_NO_TEXT;
 }
 
@@ -30,12 +30,12 @@ switch (FEAT_ROADVEHS, SELF, switch_GTQ6121BEVBT3_cargo_graphics, cargo_subtype)
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_GTQ6121BEVBT3_graphics, position_in_articulated_veh) {
-    1: switch_GTQ6121BEVBT3_cargo_graphics;
+    0: switch_GTQ6121BEVBT3_cargo_graphics;
     empty_sprites;
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_GTQ6121BEVBT3_articulated_part, extra_callback_info1) {
-    1..2 : return GTQ6121BEVBT3;
+    1 : return GTQ6121BEVBT3;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
@@ -56,32 +56,32 @@ item (FEAT_ROADVEHS, GTQ6121BEVBT3) {
         default_cargo_type:             PASS;
 
         name:                           string(STR_NAME_GTQ6121BEVBT3);
-        introduction_date:              date(2015,1,1);
+        introduction_date:              date(2015,3,1);
         model_life:                     60;
         retire_early:                   50;
         vehicle_life:                   13;
-        reliability_decay:              12;
+        reliability_decay:              16;
 
-        power:                          155 kW;
+        power:                          135 kW;
         weight:                         13.75 ton;
         tractive_effort_coefficient:    0.3;
         speed:                          70 km/h;
 
-        cargo_capacity:                 25;
+        cargo_capacity:                 37;
         loading_speed:                  40 << param_loading_speed;
-        cargo_age_period:               160 << param_cargo_decay;
+        cargo_age_period:               170 << param_cargo_decay;
     }
     graphics {
         default:                        switch_GTQ6121BEVBT3_graphics;
         purchase:                       spriteset_GTQ6121BEVBT3_purchase;
         cargo_subtype_text:             switch_GTQ6121BEVBT3_cargo_subtype;
-        length:                         switch_2_7_2_length_11;
+        length:                         switch_8_3_length_11;
         articulated_part:               switch_GTQ6121BEVBT3_articulated_part;
-        additional_text:                string(STR_DESC_4, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 160 ,string(STR_CLASS_HIGH_2)), string(STR_LOADING_SPEED, 40));
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 170 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 40), string(STR_POWERTRAIN_TYPE, string(STR_ELECTRIC)));
 
-        cost_factor:                    196;
-        running_cost_factor:            1 * runningcostfactor();
-        purchase_running_cost_factor:   1 * 8;
+        cost_factor:                    379;
+        running_cost_factor:            5 * runningcostfactor();
+        purchase_running_cost_factor:   5 * 8;
     }
 }
 

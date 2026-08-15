@@ -1,0 +1,93 @@
+// Begin BJ6180C8CTD
+
+spriteset (spriteset_BJ6180C8CTD_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_xl ("Articulated", "Menu/BJ6180C8CTD_BJ")
+}
+
+spriteset (spriteset_BJ6180C8CTD_BJ_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Articulated", "BJ6180C8CTD_BJ_1")
+}
+
+spriteset (spriteset_BJ6180C8CTD_BJ_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard__1 ("Articulated", "BJ6180C8CTD_BJ_2")
+}
+
+spriteset (spriteset_BJ6180C8CTD_BJ_BRT_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Articulated", "BJ6180C8CTD_BJ_BRT_1")
+}
+
+spriteset (spriteset_BJ6180C8CTD_BJ_BRT_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard__1 ("Articulated", "BJ6180C8CTD_BJ_BRT_2")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BJ6180C8CTD_cargo_subtype, cargo_subtype) {
+    0: return string(STR_BJ);
+    1: return string(STR_BJ_BRT);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BJ6180C8CTD_BJ_cargo_graphics, position_in_articulated_veh) {
+    0: spriteset_BJ6180C8CTD_BJ_1;
+    1: spriteset_BJ6180C8CTD_BJ_2;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BJ6180C8CTD_BJ_BRT_cargo_graphics, position_in_articulated_veh) {
+    0: spriteset_BJ6180C8CTD_BJ_BRT_1;
+    1: spriteset_BJ6180C8CTD_BJ_BRT_2;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BJ6180C8CTD_graphics, cargo_subtype) {
+    0: switch_BJ6180C8CTD_BJ_cargo_graphics;
+    1: switch_BJ6180C8CTD_BJ_BRT_cargo_graphics;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BJ6180C8CTD_articulated_part, extra_callback_info1) {
+    1: return BJ6180C8CTD;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, BJ6180C8CTD) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_BJ6180C8CTD);
+        introduction_date:              date(2012,7,11);
+        model_life:                     60;
+        retire_early:                   50;       
+        vehicle_life:                   13;
+        reliability_decay:              8;
+
+        power:                          213 kW;
+        weight:                         17.5 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          80 km/h;
+
+        cargo_capacity:                 85;
+        loading_speed:                  80 << param_loading_speed;
+        cargo_age_period:               137 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_BJ6180C8CTD_graphics;
+        purchase:                       spriteset_BJ6180C8CTD_purchase;
+        cargo_subtype_text:             switch_BJ6180C8CTD_cargo_subtype;
+        articulated_part:               switch_BJ6180C8CTD_articulated_part;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_EXTRA_LARGE), string(STR_COMFORT, 137 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 80), string(STR_POWERTRAIN_TYPE, string(STR_NG)));
+
+        cost_factor:                    324;
+        running_cost_factor:            18 * runningcostfactor();
+        purchase_running_cost_factor:   18 * 8;
+        length:                         switch_8_8_length_16;
+    }
+}
+
+// End BJ6180C8CTD

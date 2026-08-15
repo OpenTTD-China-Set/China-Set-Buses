@@ -9,23 +9,23 @@ spriteset (spriteset_ZK6125CHEVNPG29_standard_purchase, ZOOM_LEVEL_IN_4X, BIT_DE
 }
 
 spriteset (spriteset_ZK6125CHEVNPG29_standard_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "ZK6125CHEVNPG29")
+    template_standard_0 ("Two-Axle", "ZK6125CHEVNPG29")
 }
 
 spriteset (spriteset_ZK6125CHEVNPG29_standard_DT, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "ZK6125CHEVNPG29_DT")
+    template_standard_0 ("Two-Axle", "ZK6125CHEVNPG29_DT")
 }
 
 spriteset (spriteset_ZK6125CHEVNPG29_standard_CJ, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "ZK6125CHEVNPG29_CJ")
+    template_standard_0 ("Two-Axle", "ZK6125CHEVNPG29_CJ")
 }
 
 spriteset (spriteset_ZK6125CHEVNPG29_standard_SY, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "ZK6125CHEVNPG29_SY")
+    template_standard_0 ("Two-Axle", "ZK6125CHEVNPG29_SY")
 }
 
 spriteset (spriteset_ZK6125CHEVNPG29_high_spec_HB, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_2 ("Two-Axle", "ZK6125CHEVNPG29_HB")
+    template_standard_0 ("Two-Axle", "ZK6125CHEVNPG29_HB")
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_ZK6125CHEVNPG29_standard_cargo_subtype, cargo_subtype) {
@@ -46,12 +46,12 @@ switch (FEAT_ROADVEHS, SELF, switch_ZK6125CHEVNPG29_standard_cargo_graphics, car
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_ZK6125CHEVNPG29_standard_graphics, position_in_articulated_veh) {
-    1: switch_ZK6125CHEVNPG29_standard_cargo_graphics;
+    0: switch_ZK6125CHEVNPG29_standard_cargo_graphics;
     empty_sprites;
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_ZK6125CHEVNPG29_standard_articulated_part, extra_callback_info1) {
-    1..2 : return ZK6125CHEVNPG29_standard;
+    1 : return ZK6125CHEVNPG29_standard;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
@@ -83,7 +83,7 @@ item (FEAT_ROADVEHS, ZK6125CHEVNPG29_standard) {
         tractive_effort_coefficient:    0.3;
         speed:                          70 km/h;
 
-        cargo_capacity:                 29;
+        cargo_capacity:                 43;
         loading_speed:                  40 << param_loading_speed;
         cargo_age_period:               125 << param_cargo_decay;
     }
@@ -91,13 +91,13 @@ item (FEAT_ROADVEHS, ZK6125CHEVNPG29_standard) {
         default:                        switch_ZK6125CHEVNPG29_standard_graphics;
         purchase:                       spriteset_ZK6125CHEVNPG29_standard_purchase;
         cargo_subtype_text:             switch_ZK6125CHEVNPG29_standard_cargo_subtype;
-        length:                         switch_2_7_2_length_11;
+        length:                         switch_8_3_length_11;
         articulated_part:               switch_ZK6125CHEVNPG29_standard_articulated_part;
-        additional_text:                string(STR_DESC_4, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 125 ,string(STR_CLASS_ORIDINARY)), string(STR_LOADING_SPEED, 40));
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_LARGE), string(STR_COMFORT, 125 ,string(STR_CLASS_ORDINARY)), string(STR_LOADING_SPEED, 40), string(STR_POWERTRAIN_TYPE, string(STR_HYBRID_2, string(STR_ELECTRIC), string(STR_NG))));
 
-        cost_factor:                    200;
-        running_cost_factor:            1 * runningcostfactor();
-        purchase_running_cost_factor:   1 * 8;
+        cost_factor:                    279;
+        running_cost_factor:            8 * runningcostfactor();
+        purchase_running_cost_factor:   8 * 8;
         name:                           switch_ZK6125CHEVNPG29_standard_name;
     }
 }

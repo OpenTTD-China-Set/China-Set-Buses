@@ -1,0 +1,81 @@
+// Begin KLQ6122BAE61
+
+switch (FEAT_ROADVEHS, SELF, switch_KLQ6122BAE61_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_HIGER_NEW_HAIWEI);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_KLQ6122BAE61_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Two-Axle", "KLQ6122BAE61_ORIGINAL")
+}
+
+spriteset (spriteset_KLQ6122BAE61_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "KLQ6122BAE61_ORIGINAL")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_KLQ6122BAE61_cargo_subtype, cargo_subtype) {
+    0: return string(STR_ORIGINAL);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_KLQ6122BAE61_cargo_graphics, cargo_subtype) {
+    0: spriteset_KLQ6122BAE61_original;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_KLQ6122BAE61_graphics, position_in_articulated_veh) {
+    0: switch_KLQ6122BAE61_cargo_graphics;
+    empty_sprites;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_KLQ6122BAE61_articulated_part, extra_callback_info1) {
+    1 : return KLQ6122BAE61;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, KLQ6122BAE61) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:					KLQ6112HQE31;
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         8;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_KLQ6122BAE61);
+        introduction_date:              date(2023,5,9);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   15;
+        reliability_decay:              8;
+
+        power:                          247 kW;
+        weight:                         13.26 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          100 km/h;
+
+        cargo_capacity:                 25 ;
+        loading_speed:                  20 << param_loading_speed;
+        cargo_age_period:               288 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_KLQ6122BAE61_graphics;
+        purchase:                       spriteset_KLQ6122BAE61_purchase;
+        cargo_subtype_text:             switch_KLQ6122BAE61_cargo_subtype;
+        length:                         switch_8_3_length_11;
+        articulated_part:               switch_KLQ6122BAE61_articulated_part;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_LONG_DISTANCE), string(STR_SIZE_LARGE), string(STR_COMFORT, 288 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 20), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+        cost_factor:                    279;
+        running_cost_factor:            22 * runningcostfactor();
+        purchase_running_cost_factor:   22 * 8;
+        name:                           switch_KLQ6122BAE61_name;
+    }
+}
+
+// End KLQ6122BAE61

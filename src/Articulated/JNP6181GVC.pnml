@@ -1,3 +1,5 @@
+// Begin JNP6181GVC
+
 spriteset (spriteset_JNP6181GVC_BJ_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
     template_purchase_xl ("Articulated", "Menu/JNP6181GVC-BJ")
 }
@@ -7,7 +9,7 @@ spriteset (spriteset_JNP6181GVC_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
 }
 
 spriteset (spriteset_JNP6181GVC_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_0 ("Articulated", "JNP6181GVC-BJ-2")
+    template_standard__1 ("Articulated", "JNP6181GVC-BJ-2")
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_JNP6181GVC_articulated_part, extra_callback_info1) {
@@ -35,7 +37,7 @@ item (FEAT_ROADVEHS, JNP6181GVC) {
         default_cargo_type:             PASS;
 
         name:                           string(STR_NAME_JNP6181GVC);
-        introduction_date:              date(2012,1,1);
+        introduction_date:              date(2012,8,3);
         model_life:                     60;       
         vehicle_life:                   13;
         reliability_decay:              4;
@@ -53,11 +55,13 @@ item (FEAT_ROADVEHS, JNP6181GVC) {
         default:                        switch_JNP6181GVC_graphics;
         purchase:                       spriteset_JNP6181GVC_BJ_purchase;
         articulated_part:               switch_JNP6181GVC_articulated_part;
-        additional_text:                string(STR_DESC_4, string(STR_TYPE_URBAN), string(STR_SIZE_EXTRA_LARGE), string(STR_COMFORT, 157 ,string(STR_CLASS_HIGH_2)), string(STR_LOADING_SPEED, 60));
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_EXTRA_LARGE), string(STR_COMFORT, 157 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 60), string(STR_POWERTRAIN_TYPE, string(STR_NG)));
 
-        cost_factor:                    288;
-        running_cost_factor:            3 * runningcostfactor();
-        purchase_running_cost_factor:   3 * 8;
+        cost_factor:                    334;
+        running_cost_factor:            20 * runningcostfactor();
+        purchase_running_cost_factor:   20 * 8;
         length:                         switch_8_8_length_16;
     }
 }
+
+// End JNP6181GVC

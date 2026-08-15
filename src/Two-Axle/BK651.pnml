@@ -1,0 +1,65 @@
+// Begin BK651
+
+spriteset (spriteset_BK651_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Two-Axle", "BK651")
+}
+
+spriteset (spriteset_BK651_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "BK651")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BK651_graphics, position_in_articulated_veh) {
+    0: spriteset_BK651_original;
+    empty_sprites;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BK651_articulated_part, extra_callback_info1) {
+    1: return BK651;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item (FEAT_ROADVEHS, BK651) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         8;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_BK651);
+        introduction_date:              date(1965,1,1);
+        model_life:                     60;
+        retire_early:                   45;
+        vehicle_life:                   20;
+        reliability_decay:              16;
+
+        power:                          160 hp;
+        weight:                         8.2 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          65 km/h;
+
+        cargo_capacity:                 50;
+        loading_speed:                  40 << param_loading_speed;
+        cargo_age_period:               105 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_BK651_graphics;
+        purchase:                       spriteset_BK651_purchase;
+        length:                         switch_8_2_length_10;
+        articulated_part:               switch_BK651_articulated_part;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_MEDIUM), string(STR_COMFORT, 105 ,string(STR_CLASS_ORDINARY)), string(STR_LOADING_SPEED, 40), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+
+        cost_factor:                    126;
+        running_cost_factor:            12 * runningcostfactor();
+        purchase_running_cost_factor:   12 * 8;
+    }
+}
+
+// End BK651
