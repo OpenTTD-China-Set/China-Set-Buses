@@ -55,6 +55,8 @@ STR_COMFORT                 :{BLACK}舒适度：{GOLD}{COMMA}{BLACK}（{STRING}{
 STR_COMFORT_WITHOUT_CLASS   :{BLACK}舒适度：{GOLD}{COMMA}
 
 # 折叠栏 A to Z
+STR_LIST_ASIASTAR_X9C               :亚星X9City系列
+STR_LIST_GOLDEN_DRAGON_TOJOY        :金旅朝歌系列
 STR_LIST_HIGER_9_BUS                :海格9系城市客车
 STR_LIST_HIGER_9_COACH              :海格9系公路客车
 STR_LIST_HIGER_NEW_HAIWEI           :海格新海威系列
@@ -131,14 +133,15 @@ STR_BJ_BEIDIANLAN                   :{SILVER}北京公交电车{WHITE}分公司{
 STR_BJ_BLUE_LUCKY_CLOUDS            :{BLACK}北京公交{LTBLUE}“蓝祥云”{BLACK}涂装
 STR_BJ_BRT                          :{SILVER}北京公交{GOLD}B{BLUE}RT{BLACK}涂装
 STR_BJ_GREEN_LUCKY_CLOUDS           :{BLACK}北京公交{GREEN}“绿祥云”{BLACK}涂装
+STR_BJ_MINI                         :{BLACK}北京{WHITE}小{BLUE}公{WHITE}共 {BLACK}涂装
 STR_BJ_RED_LUCKY_CLOUDS             :{BLACK}北京公交{RED}“红祥云”{BLACK}涂装
 STR_BJ_YUNTONG                      :{RED}北京{SILVER}运通{RED}客运{BLACK}涂装
 STR_CHENGDE                         :{LTBLUE}承德{BLUE}公交{ORANGE}集团{BLACK}涂装
 STR_CJ                              :{CREAM}昌吉公交集团{BLACK}涂装
 STR_CMB                             :{WHITE}中华{LTBLUE}汽车{BLACK}涂装
-STR_CTB                             :{YELLOW}香港{RED}城市{BLUE}巴士{BLACK}涂装
-STR_CTB_ALX500                      :{YELLOW}香港{RED}城市{BLUE}巴士{BLACK}涂装亚历山大ALX500车身
-STR_CTB_ALX_RH                      :{YELLOW}香港{RED}城市{BLUE}巴士{BLACK}涂装亚历山大RH车身
+STR_CTB                             :{YELLOW}香港{RED}城{BLUE}巴{BLACK}涂装
+STR_CTB_ALX500                      :{YELLOW}香港{RED}城{BLUE}巴{BLACK}涂装亚历山大ALX500车身
+STR_CTB_ALX_RH                      :{YELLOW}香港{RED}城{BLUE}巴{BLACK}涂装亚历山大RH车身
 STR_DBTS                            :{PURPLE}愉景湾{WHITE}巴士{PURPLE}服务{BLACK}涂装
 STR_DT                              :{BLUE}大同公交{LTBLUE}集团{BLACK}涂装
 STR_FC_ORIGINAL                     :{BLACK}“风采”造型{GREEN}原版{BLACK}涂装
@@ -157,9 +160,11 @@ STR_NWFB                            :{GREEN}新世界{WHITE}第一{WHITE}巴士{
 STR_NWFB_ALX500                     :{GREEN}新世界{WHITE}第一{WHITE}巴士{BLACK}涂装亚历山大ALX500车身
 STR_ON200_203_ORIGINAL_ALX_RH       :{BLACK}原版涂装亚历山大RH车身ON200-203
 STR_ON200_203_KMB_ALX_RH            :{RED}九龙{WHITE}巴士{BLACK}涂装亚历山大RH涂装ON200-203
-STR_ON204_CTB                       :{YELLOW}香港{RED}城市{BLUE}巴士{BLACK}涂装ON204
+STR_ON204_CTB                       :{YELLOW}香港{RED}城{BLUE}巴{BLACK}涂装ON204
 STR_ON204_KMB                       :{RED}九龙{WHITE}巴士{BLACK}涂装ON204
 STR_ORIGINAL                        :{BLACK}原版涂装
+STR_ORIGINAL_1                      :{BLACK}原版涂装1
+STR_ORIGINAL_2                      :{BLACK}原版涂装2
 STR_ORIGINAL_1_WINDSHIELD           :{BLACK}单风挡原版涂装
 STR_ORIGINAL_2_WINDSHIELD           :{BLACK}双风挡原版涂装
 STR_ORIGINAL_6_1_WINDSHIELD         :{BLACK}宇通6系单风挡原版涂装
@@ -172,13 +177,16 @@ STR_ORIGINAL_CR223LD                :{BLACK}原版涂装傲群CR223LD车身
 STR_ORIGINAL_ECW                    :{BLACK}原版涂装ECW车身
 STR_ORIGINAL_EXPLORER               :{BLACK}原版涂装莱特Explorer车身
 STR_ORIGINAL_FIRST_ALX_RH           :{BLACK}原版涂装亚历山大RH车身首次量产版
+STR_ORIGINAL_HIGH_ROOF              :{BLACK}原版涂装高车顶版
 STR_ORIGINAL_NORMAL_ALX_RH          :{BLACK}原版涂装亚历山大RH车身普通版
+STR_SHIJIAZHUANG                    :{RED}石家庄{SILVER}公交{RED}集团{BLACK}涂装
 STR_SH_GREEN                        :{BLACK}上海{GREEN}绿色{BLACK}涂装
 STR_SH_PUDONG_BLUE                  :{BLACK}上海{WHITE}浦东{BLUE}蓝色{BLACK}涂装
 STR_SH_WHITE_GREEN                  :{BLACK}上海{WHITE}白眼{GREEN}绿色{BLACK}涂装
 STR_SILVER                          :{SILVER}银色{BLACK}涂装
 STR_SY                              :{WHITE}沈阳{BLUE}客运{DKGREEN}集{GOLD}团{BLACK}涂装
-STR_TAIZHOU                         :{LTBLUE}泰州公交集团{BLACK}涂装
+STR_TAIZHOU_LTBLUE                  :{LTBLUE}泰州公交集团{BLACK}涂装
+STR_TAIZHOU_DKBLUE                  :{BLUE}泰州公交集团{BLACK}涂装
 STR_TIANSHUI_RED                    :{RED}天水羲通公交{GOLD}集团{BLACK}涂装
 STR_TJ_GOLD                         :{RED}天{GOLD}津公交集{RED}团{BLACK}涂装
 STR_TJ_SILVER                       :{RED}天{SILVER}津公交集{RED}团{BLACK}涂装
@@ -201,5 +209,6 @@ STR_YANGZHOU_GREEN_WHITE            :{GREEN}扬州{WHITE}公交集团{BLACK}涂�
 STR_YANZHOU_GREEN_WHITE             :{GREEN}兖州公交{WHITE}集团{BLACK}涂装
 STR_YG_ORIGINAL                     :{BLACK}“阳光”造型{GREEN}原版{BLACK}涂装
 STR_YG_TJ                           :{BLACK}“阳光”造型{RED}天{SILVER}津公交集{RED}团{BLACK}涂装
-
+STR_YULIN_SILVER                    :{SILVER}榆林公交集团{BLACK}涂装
+STR_ZQGY_NEW_GREEN                  :{YELLOW}肇庆高要智慧{GREEN}新交通{BLACK}涂装
 

@@ -19,7 +19,7 @@ spriteset (spriteset_JS6108GHEV17_taizhou, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
 
 switch (FEAT_ROADVEHS, SELF, switch_JS6108GHEV17_cargo_subtype, cargo_subtype) {
     0: return string(STR_WHITE);
-    1: return string(STR_TAIZHOU);
+    1: return string(STR_TAIZHOU_LTBLUE);
     return CB_RESULT_NO_TEXT;
 }
 

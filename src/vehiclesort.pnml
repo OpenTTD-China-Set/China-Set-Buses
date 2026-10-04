@@ -2,6 +2,11 @@
 
 sort (FEAT_ROADVEHS, [
     //城市客车
+    BK6590,
+    XML6605JEVJ0C2,
+    ZK6607BEVG1L,
+    XML6705JEVY0C1,
+    CJ6800G1CH,
     LCK6820HG,
     ZK6845BEVG1,
     BK640, //8.5m
@@ -15,6 +20,7 @@ sort (FEAT_ROADVEHS, [
     BJ6105CHEVCG_1,
     BYD6100LGEV9,
     GTQ6105BEVBT20,
+    GZK6100,
     JS6108GHEV17,
     JS6108GHEV21,
     JS6108GHEVC,
@@ -36,6 +42,8 @@ sort (FEAT_ROADVEHS, [
     Volvo_Olympian_113M_with_AC,
     BJ6123SHEVCA_7,
     GTQ6121BEVBT3,
+    JS6128GHBEV19,
+    JS6128GHBEV21,
     KLQ6129GE4_high_spec,
     KLQ6129GE4_standard,
     Leyland_Olympian_12M_2D_with_AC,
@@ -89,6 +97,7 @@ sort (FEAT_ROADVEHS, [
     JT663, //9.64m
     ZK6907H6Y_26seats,
     ZK6907H6Y_39seats_high_spec,
+    JT6970W,
     KLQ6109QE4_38seats,
     XML6102J15Y_36seats,
     YBL6105HJ,
@@ -107,6 +116,7 @@ sort (FEAT_ROADVEHS, [
     KLQ6122BAE31,
     KLQ6122BAE61,
     KLQ6122KAE31,
+    YBL6125H1QCJ,
     ZK6128H6QY1_38seats,
     ZK6128H6QY1_50seats,
     ZK6137H16QY1_38seats,
