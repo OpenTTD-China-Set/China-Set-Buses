@@ -1,20 +1,26 @@
 // Begin RC421P
 
 spriteset (spriteset_RC421P_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_purchase_32bpp ("Two-Axle", "RC421P_HB")
+    template_purchase_32bpp ("Two-Axle", "RC421P_ORIGINAL_1")
 }
 
-spriteset (spriteset_RC421P_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    template_standard_0 ("Two-Axle", "RC421P_HB")
+spriteset (spriteset_RC421P_original_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "RC421P_ORIGINAL_1")
+}
+
+spriteset (spriteset_RC421P_original_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "RC421P_ORIGINAL_2")
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_RC421P_cargo_subtype, cargo_subtype) {
-    0: return string(STR_ORIGINAL);
+    0: return string(STR_ORIGINAL_1);
+    1: return string(STR_ORIGINAL_2);
     return CB_RESULT_NO_TEXT;
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_RC421P_cargo_graphics, cargo_subtype) {
-    0: spriteset_RC421P_original;
+    0: spriteset_RC421P_original_1;
+    1: spriteset_RC421P_original_2;
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_RC421P_graphics, position_in_articulated_veh) {

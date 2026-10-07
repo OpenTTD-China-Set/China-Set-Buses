@@ -1,0 +1,81 @@
+// Begin ZK6607BEVG2
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6607BEVG2_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_YUTONG_E6);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_ZK6607BEVG2_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Two-Axle", "ZK6607BEVG")
+}
+
+spriteset (spriteset_ZK6607BEVG2_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6607BEVG")
+}
+
+spriteset (spriteset_ZK6607BEVG2_mawei, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6607BEVG2_MAWEI")
+}
+
+spriteset (spriteset_ZK6607BEVG2_ordos_tianan, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "ZK6607BEVG2_ORDOS_TIANAN")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6607BEVG2_cargo_subtype, cargo_subtype) {
+    0: return string(STR_ORIGINAL);
+    1: return string(STR_MAWEI);
+    2: return string(STR_ORDOS_TIANAN);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_ZK6607BEVG2_graphics, cargo_subtype) {
+    0: spriteset_ZK6607BEVG2_original;
+    1: spriteset_ZK6607BEVG2_mawei;
+    2: spriteset_ZK6607BEVG2_ordos_tianan;
+}
+
+item (FEAT_ROADVEHS, ZK6607BEVG2) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         6;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_ZK6607BEVG2);
+        introduction_date:              date(2023,12,26);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   13;
+        reliability_decay:              8;
+
+        power:                          120 kW;
+        weight:                         5.4 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          70 km/h;
+
+        cargo_capacity:                 19;
+        loading_speed:                  20 << param_loading_speed;
+        cargo_age_period:               138 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_ZK6607BEVG2_graphics;
+        purchase:                       spriteset_ZK6607BEVG2_purchase;
+        cargo_subtype_text:             switch_ZK6607BEVG2_cargo_subtype;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_MINI), string(STR_COMFORT, 138 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 20), string(STR_POWERTRAIN_TYPE, string(STR_ELECTRIC)));
+
+        cost_factor:                    225;
+        running_cost_factor:            5 * runningcostfactor();
+        purchase_running_cost_factor:   5 * 8;
+        name:                           switch_ZK6607BEVG2_name;
+    }
+}
+
+// End ZK6607BEVG2

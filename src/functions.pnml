@@ -18,12 +18,12 @@ switch (FEAT_ROADVEHS, SELF, switch_8_2_length_10, position_in_articulated_veh) 
 
 switch (FEAT_ROADVEHS, SELF, switch_8_3_length_11, position_in_articulated_veh) {
     0: return 8;
-    return 2;
+    return 3;
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_8_4_length_12, position_in_articulated_veh) {
     0: return 8;
-    return 2;
+    return 4;
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_8_5_length_13, position_in_articulated_veh) {
