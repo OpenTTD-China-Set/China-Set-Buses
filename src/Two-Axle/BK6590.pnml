@@ -1,0 +1,76 @@
+// Begin BK6590
+
+spriteset (spriteset_BK6590_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Two-Axle", "BK6590_ORIGINAL")
+}
+
+spriteset (spriteset_BK6590_white, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "BK6590_WHITE")
+}
+
+spriteset (spriteset_BK6590_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "BK6590_ORIGINAL")
+}
+
+spriteset (spriteset_BK6590_bj_mini, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "BK6590_BJ")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BK6590_cargo_subtype, cargo_subtype) {
+    0: return string(STR_WHITE);
+    1: return string(STR_ORIGINAL);
+    2: return string(STR_BJ_MINI);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_BK6590_graphics, cargo_subtype) {
+    0: spriteset_BK6590_white;
+    1: spriteset_BK6590_original;
+    2: spriteset_BK6590_bj_mini;
+}
+
+item (FEAT_ROADVEHS, BK6590) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         6;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_BK6590);
+        introduction_date:              date(1987,1,1);
+        model_life:                     60;
+        retire_early:                   45;
+        vehicle_life:                   15;
+        reliability_decay:              16;
+
+        power:                          64 kW;
+        weight:                         3.15 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          90 km/h;
+
+        cargo_capacity:                 19;
+        loading_speed:                  20 << param_loading_speed;
+        cargo_age_period:               139 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_BK6590_graphics;
+        purchase:                       spriteset_BK6590_purchase;
+        cargo_subtype_text:             switch_BK6590_cargo_subtype;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_MINI), string(STR_COMFORT, 139 ,string(STR_CLASS_ORDINARY)), string(STR_LOADING_SPEED, 20), string(STR_POWERTRAIN_TYPE, string(STR_DIESEL)));
+
+        cost_factor:                    86;
+        running_cost_factor:            12 * runningcostfactor();
+        purchase_running_cost_factor:   12 * 8;
+    }
+}
+
+// End BK6590

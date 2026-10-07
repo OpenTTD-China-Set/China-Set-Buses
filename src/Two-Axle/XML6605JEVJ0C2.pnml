@@ -1,0 +1,74 @@
+// Begin XML6605JEVJ0C2
+
+switch (FEAT_ROADVEHS, SELF, switch_XML6605JEVJ0C2_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_GOLDEN_DRAGON_TOJOY);
+    return CB_RESULT_NO_TEXT;
+}
+
+spriteset (spriteset_XML6605JEVJ0C2_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_purchase_32bpp ("Two-Axle", "XML6605JEVJ0C2")
+}
+
+spriteset (spriteset_XML6605JEVJ0C2_original, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "XML6605JEVJ0C2")
+}
+
+spriteset (spriteset_XML6605JEVJ0C2_zqgy, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    template_standard_0 ("Two-Axle", "XML6605JEVJ0C2_ZQGY")
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_XML6605JEVJ0C2_cargo_subtype, cargo_subtype) {
+    0: return string(STR_ORIGINAL);
+    1: return string(STR_ZQGY_NEW_GREEN);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_XML6605JEVJ0C2_graphics, cargo_subtype) {
+    0: spriteset_XML6605JEVJ0C2_original;
+    1: spriteset_XML6605JEVJ0C2_zqgy;
+}
+
+item (FEAT_ROADVEHS, XML6605JEVJ0C2) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH;
+        climates_available:             ALL_CLIMATES;
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        refit_cost:                     0;
+        misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        cost_factor:                    1;
+        running_cost_factor:            1;
+
+        length:                         6;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
+        default_cargo_type:             PASS;
+
+        name:                           string(STR_NAME_XML6605JEVJ0C2);
+        introduction_date:              date(2024,11,8);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   13;
+        reliability_decay:              8;
+
+        power:                          160 kW;
+        weight:                         5.9 ton;
+        tractive_effort_coefficient:    0.3;
+        speed:                          70 km/h;
+
+        cargo_capacity:                 19;
+        loading_speed:                  30 << param_loading_speed;
+        cargo_age_period:               150 << param_cargo_decay;
+    }
+    graphics {
+        default:                        switch_XML6605JEVJ0C2_graphics;
+        purchase:                       spriteset_XML6605JEVJ0C2_purchase;
+        cargo_subtype_text:             switch_XML6605JEVJ0C2_cargo_subtype;
+        additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_MINI), string(STR_COMFORT, 150 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 30), string(STR_POWERTRAIN_TYPE, string(STR_ELECTRIC)));
+
+        cost_factor:                    261;
+        running_cost_factor:            5 * runningcostfactor();
+        purchase_running_cost_factor:   5 * 8;
+        name:                           switch_XML6605JEVJ0C2_name;
+    }
+}
+
+// End XML6605JEVJ0C2

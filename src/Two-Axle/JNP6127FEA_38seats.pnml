@@ -30,8 +30,6 @@ item (FEAT_ROADVEHS, JNP6127FEA_38seats) {
         running_cost_base:              RUNNING_COST_ROADVEH;
         refit_cost:                     0;
         misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
-        variant_group:					JNP6127FEA_38seats;
-
         cost_factor:                    1;
         running_cost_factor:            1;
 
