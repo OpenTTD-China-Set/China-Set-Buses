@@ -40,7 +40,7 @@ item (FEAT_ROADVEHS, BK6590) {
         cost_factor:                    1;
         running_cost_factor:            1;
 
-        length:                         8;
+        length:                         6;
         refittable_cargo_classes:       bitmask(CC_PASSENGERS);
         cargo_allow_refit:              [PASS, TOUR, YETI, YETY];
         default_cargo_type:             PASS;

@@ -77,12 +77,15 @@ STR_LIST_HIGER_NEW_HAIWEI           :Higer New Haiwei Series
 STR_LIST_JNP6127FEA                 :JNP6127FEA
 STR_LIST_JS6108GHEV                 :JS6108GHEV
 STR_LIST_LEYLAND_OLYMPIAN           :Leyland Olympian
+STR_LIST_NISSAN_ECHO                :Nissan Echo Series
 STR_LIST_SHENHAO                    :"Shenhao" Series
 STR_LIST_SUNWIN_8                   :SUNWIN 8 Series
 STR_LIST_VOLVO_OLYMPIAN             :Volvo Olympian
 STR_LIST_VOLVO_SUPER_OLYMPIAN       :Volvo Super Olympian
 STR_LIST_XML6102J15Y                :XML6105J15Y
 STR_LIST_YUTONG_7                   :YUTONG 7 Series
+STR_LIST_YUTONG_E6                  :YUTONG E6 Series
+STR_LIST_YUTONG_E7                  :YUTONG E7 Series
 STR_LIST_YUTONG_E8                  :YUTONG E8 Series
 STR_LIST_YUTONG_E10                 :YUTONG E10 Series
 STR_LIST_YUTONG_E12                 :YUTONG E12 Series
@@ -133,12 +136,19 @@ STR_NAME_JS6128GHBEV19              :JS6128GHBEV19
 STR_NAME_JS6128GHBEV21              :JS6128GHBEV21
 STR_NAME_JT663                      :JT663
 STR_NAME_JT6970W                    :JT6970W
+STR_NAME_KC42D4                     :KC42D4
+STR_NAME_KC42G4                     :KC42G4
+STR_NAME_KLQ6108GE4                 :KLQ6108GE4
+STR_NAME_KLQ6109G                   :KLQ6109G
+STR_NAME_KLQ6109GAHEVE5BZ           :KLQ6109GAHEVE5BZ
 STR_NAME_KLQ6109QE4_38SEATS         :KLQ6109QE4  {SILVER}38 Seats
 STR_NAME_KLQ6109QE4_46SEATS         :KLQ6109QE4  {SILVER}46 Seats
 STR_NAME_KLQ6112HQE31               :KLQ6112HQE31
 STR_NAME_KLQ6112LDE41               :KLQ6112LDE41
 STR_NAME_KLQ6115HTAE50              :KLQ6115HTAE50
 STR_NAME_KLQ6116ZGBEVN1             :KLQ6116ZGBEVN1
+STR_NAME_KLQ6119GAHEVC5             :KLQ6119GAHEVC5
+STR_NAME_KLQ6119GS                  :KLQ6119GS
 STR_NAME_KLQ6122BAE31               :KLQ6122BAE31
 STR_NAME_KLQ6122BAE61               :KLQ6122BAE61
 STR_NAME_KLQ6122KAE31               :KLQ6122KAE31
@@ -191,6 +201,9 @@ STR_NAME_ZK6128H6QY6                        :ZK6128H6QY6
 STR_NAME_ZK6137H16QY1_38SEATS               :ZK6137H16QY1  {SILVER}38 Seats
 STR_NAME_ZK6137H16QY1_54SEATS               :ZK6137H16QY1  {SILVER}54 Seats
 STR_NAME_ZK6607BEVG1L                       :ZK6607BEVG1L
+STR_NAME_ZK6607BEVG2                        :ZK6607BEVG2
+STR_NAME_ZK6607BEVG3K                       :ZK6607BEVG3K
+STR_NAME_ZK6607BEVG3K_1D                    :ZK6607BEVG3K  {SILVER}1 Door
 STR_NAME_ZK6820BEVG33                       :ZK6820BEVG33
 STR_NAME_ZK6820BEVG33_2D                    :ZK6820BEVG33  {SILVER}2 Doors
 STR_NAME_ZK6845BEVG1                        :ZK6845BEVG1
@@ -221,6 +234,7 @@ STR_BJ_GREEN_LUCKY_CLOUDS           :{BLACK}Beijing {GREEN}"Green Lucky Clouds" 
 STR_BJ_MINI                         :{BLACK}Beijing {WHITE}Mini{BLUE}bus {BLACK}Livery
 STR_BJ_RED_LUCKY_CLOUDS             :{BLACK}Beijing {RED}"Red Lucky Clouds" {BLACK}Livery
 STR_BJ_YUNTONG                      :{BLACK}Beijing {RED}Yuntong {SILVER}Bus Company {BLACK}Livery
+STR_BUMPER_WHITE                    :{WHITE}White {BLACK}Livery with Bumper
 STR_CHENGDE                         :{LTBLUE}Chengde Public {BLUE}Traffic {ORANGE}Corporation {BLACK}Livery
 STR_CJ                              :{CREAM}Changji Public Transport Group {BLACK}Livery
 STR_CMB                             :{WHITE}China {LTBLUE}Motor Bus {BLACK}Livery
@@ -232,6 +246,10 @@ STR_DT                              :{BLUE}Datong Public Transport {LTBLUE}Group
 STR_GZ_LOVELIVE_21                  :{CREAM}CICF "Lovelive!" Livery of {GREEN}Guangzhou No.1 Bus Co.,{BLACK}2021
 STR_FC_ORIGINAL                     :{GREEN}Original Livery {BLACK}of "Elegance" Design
 STR_HB                              :{YELLOW}Harbin Public Transport Group {BLACK}Livery
+STR_HK_BUMPER_GREEN                 :{GOLD}Hongkong {GREEN}Green {GOLD}Minibus {BLACK}Livery with Bumper
+STR_HK_BUMPER_RED                   :{GOLD}Hongkong {RED}Red {GOLD}Minibus {BLACK}Livery with Bumper
+STR_HK_GREEN                        :{GOLD}Hongkong {GREEN}Green {GOLD}Minibus {BLACK}Livery
+STR_HK_RED                          :{GOLD}Hongkong {RED}Red {GOLD}Minibus {BLACK}Livery
 STR_KMB                             :{RED}Kowloon {WHITE}Motor {RED}Bus {BLACK}Livery
 STR_KMB_ALX500                      :{RED}Kowloon {WHITE}Motor {RED}Bus {BLACK}Livery of Alexander ALX500 Body
 STR_KMB_ALX_RH                      :{RED}Kowloon {WHITE}Motor {RED}Bus {BLACK}Livery of Alexander RH Body
@@ -242,12 +260,14 @@ STR_KMB_EXPLORER                    :{RED}Kowloon {WHITE}Motor {RED}Bus {BLACK}L
 STR_KMB_FIRST_ALX_RH                :{RED}Kowloon {WHITE}Motor {RED}Bus {BLACK}Livery of First Production Run of Alexander RH Body
 STR_KMB_NORMAL_ALX_RH               :{RED}Kowloon {WHITE}Motor {RED}Bus {BLACK}Livery of Normal Version of Alexander RH Body
 STR_LWB                             :{ORANGE}Long {WHITE}Win Bus {BLACK}Livery
+STR_MAWEI                           :{WHITE}Mawei Public Transport {BLUE}Group {BLACK}Livery
 STR_NWFB                            :{GREEN}New {WHITE}World {WHITE}First Bus {BLACK}Livery
 STR_NWFB_ALX500                     :{GREEN}New {WHITE}World {WHITE}First Bus {BLACK}Livery of Alexander ALX500 Body
 STR_ON200_203_ORIGINAL_ALX_RH       :{BLACK}Original Livery of Alexander RH Body on ON200-203
 STR_ON200_203_KMB_ALX_RH            :{RED}Kowloon {WHITE}Motor {RED}Bus {BLACK}Livery of Alexander RH Body on ON200-203
 STR_ON204_CTB                       :{YELLOW}Hongkong {RED}City{BLUE}bus {BLACK}Livery of ON204
 STR_ON204_KMB                       :{RED}Kowloon {WHITE}Motor {RED}Bus {BLACK}Livery of ON204
+STR_ORDOS_TIANAN                    :{WHITE}Ordos Tian'an Public Transport Group {BLACK}Livery
 STR_ORIGINAL                        :{BLACK}Original Livery
 STR_ORIGINAL_1                      :{BLACK}Original Livery 1
 STR_ORIGINAL_2                      :{BLACK}Original Livery 2
@@ -265,6 +285,7 @@ STR_ORIGINAL_EXPLORER               :{BLACK}Original Livery of Wright Explorer B
 STR_ORIGINAL_FIRST_ALX_RH           :{BLACK}Original Livery of First Production Run of Alexander RH Body
 STR_ORIGINAL_HIGH_ROOF              :{BLACK}Original Livery of High-roof Version
 STR_ORIGINAL_NORMAL_ALX_RH          :{BLACK}Original Livery of Normal Version of Alexander RH Body
+STR_PINGHU_TIANLONG                 :{WHITE}Pinghu Tianlong Urban-Rural {LTBLUE}Public Transport Group {BLACK}Livery
 STR_SHIJIAZHUANG                    :{RED}Shijiazhuang {SILVER}Transport {RED}Group {BLACK}Livery
 STR_SH_GREEN                        :{BLACK}Shanghai {GREEN}Green {BLACK}Livery
 STR_SH_PUDONG_BLUE                  :{BLACK}Shanghai {WHITE}Pudong {BLUE}Blue {BLACK}Livery
@@ -274,6 +295,7 @@ STR_SY                              :{WHITE}Shenyang {BLUE}Public {DKGREEN}Trans
 STR_TAIZHOU_LTBLUE                  :{LTBLUE}Taizhou Public Transport Group {BLACK}Livery
 STR_TAIZHOU_DKBLUE                  :{BLUE}Taizhou Public Transport Group {BLACK}Livery
 STR_TIANSHUI_RED                    :{RED}Tianshui Xitong Public {GOLD}Transport Group {BLACK}Livery
+STR_TJ_CYAN                         :{LTBLUE}Tianjin Public {BLUE}Transport {GOLD}Group {BLACK}Livery
 STR_TJ_GOLD                         :{RED}Tianjin {GOLD}Public Transport {RED}Group {BLACK}Livery
 STR_TJ_SILVER                       :{RED}Tianjin {SILVER}Public Transport {RED}Group {BLACK}Livery
 STR_TJ_SSTEC                        :{WHITE}Sino-Singapore Tianjin Eco-City {DKGREEN}Public {GOLD}Transit {BLACK}Livery

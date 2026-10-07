@@ -14,6 +14,7 @@
 //Prerequisite Headers
 #include "src/Double-Decker/Leyland_Olympian_96M_without_AC.pnml"
 #include "src/Double-Decker/Volvo_Olympian_104M_with_AC.pnml"
+#include "src/Two-Axle/ZK6607BEVG2.pnml"
 #include "src/Two-Axle/ZK6820BEVG33.pnml"
 
 //Articulated A to Z
@@ -30,6 +31,7 @@
 
 //Double-Decker A to Z
 #include "src/Double-Decker/HFF6110GS1.pnml"
+#include "src/Double-Decker/KLQ6119GS.pnml"
 #include "src/Double-Decker/Leyland_Olympian_11M_with_AC.pnml"
 #include "src/Double-Decker/Leyland_Olympian_11M_without_AC.pnml"
 #include "src/Double-Decker/Leyland_Olympian_12M_2D_with_AC.pnml"
@@ -80,12 +82,18 @@
 #include "src/Two-Axle/JS6128GHBEV21.pnml"
 #include "src/Two-Axle/JT663.pnml"
 #include "src/Two-Axle/JT6970W.pnml"
+#include "src/Two-Axle/KC42D4.pnml"
+#include "src/Two-Axle/KC42G4.pnml"
+#include "src/Two-Axle/KLQ6108GE4.pnml"
+#include "src/Two-Axle/KLQ6109G.pnml"
+#include "src/Two-Axle/KLQ6109GAHEVE5BZ.pnml"
 #include "src/Two-Axle/KLQ6109QE4_38seats.pnml"
 #include "src/Two-Axle/KLQ6109QE4_46seats.pnml"
 #include "src/Two-Axle/KLQ6112HQE31.pnml"
 #include "src/Two-Axle/KLQ6112LDE41.pnml"
 #include "src/Two-Axle/KLQ6115HTAE50.pnml"
 #include "src/Two-Axle/KLQ6116ZGBEVN1.pnml"
+#include "src/Two-Axle/KLQ6119GAHEVC5.pnml"
 #include "src/Two-Axle/KLQ6122BAE31.pnml"
 #include "src/Two-Axle/KLQ6122BAE61.pnml"
 #include "src/Two-Axle/KLQ6122KAE31.pnml"
@@ -122,6 +130,8 @@
 #include "src/Two-Axle/ZK6128H6QY1_50seats.pnml"
 #include "src/Two-Axle/ZK6128H6QY6.pnml"
 #include "src/Two-Axle/ZK6607BEVG1L.pnml"
+#include "src/Two-Axle/ZK6607BEVG3K.pnml"
+#include "src/Two-Axle/ZK6607BEVG3K_1D.pnml"
 #include "src/Two-Axle/ZK6820BEVG33_2D.pnml"
 #include "src/Two-Axle/ZK6845BEVG1.pnml"
 #include "src/Two-Axle/ZK6856BEVG4.pnml"

@@ -55,7 +55,7 @@ item (FEAT_ROADVEHS, XML6705JEVY0C1) {
         cargo_subtype_text:             switch_XML6705JEVY0C1_cargo_subtype;
         additional_text:                string(STR_DESC_5, string(STR_TYPE_URBAN), string(STR_SIZE_MEDIUM), string(STR_COMFORT, 150 ,string(STR_CLASS_HIGH_1)), string(STR_LOADING_SPEED, 30), string(STR_POWERTRAIN_TYPE, string(STR_ELECTRIC)));
 
-        cost_factor:                    268;
+        cost_factor:                    315;
         running_cost_factor:            5 * runningcostfactor();
         purchase_running_cost_factor:   5 * 8;
         name:                           switch_XML6605JEVJ0C2_name;

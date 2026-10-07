@@ -1,5 +1,10 @@
 // Begin ZK6607BEVG1L
 
+switch (FEAT_ROADVEHS, SELF, switch_ZK6607BEVG1L_name, getbits(extra_callback_info1, 0, 8) == 0x20? getbits(extra_callback_info1, 8, 8) : 0xFFFF) {
+    0: return string(STR_LIST_YUTONG_E6);
+    return CB_RESULT_NO_TEXT;
+}
+
 spriteset (spriteset_ZK6607BEVG1L_purchase, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
     template_purchase_32bpp ("Two-Axle", "ZK6607BEVG1L")
 }
@@ -24,6 +29,7 @@ item (FEAT_ROADVEHS, ZK6607BEVG1L) {
         running_cost_base:              RUNNING_COST_ROADVEH;
         refit_cost:                     0;
         misc_flags:                     bitmask(ROADVEH_FLAG_AUTOREFIT);
+        variant_group:					ZK6607BEVG2;
         cost_factor:                    1;
         running_cost_factor:            1;
 
@@ -56,6 +62,7 @@ item (FEAT_ROADVEHS, ZK6607BEVG1L) {
         cost_factor:                    272;
         running_cost_factor:            5 * runningcostfactor();
         purchase_running_cost_factor:   5 * 8;
+        name:                           switch_ZK6607BEVG1L_name;
     }
 }
 
